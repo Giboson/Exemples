@@ -7,7 +7,7 @@ internal class Program
         Console.WriteLine(numberA); 
         int numberB = new Random().Next(1, 10); // Number Random 0 do 9
         Console.WriteLine(numberB); 
-        // result
+        // result +
         int result = numberA + numberB;
         Console.WriteLine(result);
 
