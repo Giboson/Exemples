@@ -5,7 +5,7 @@
         Console.Write("the username, ");
         string username = Console.ReadLine();
 
-        if (username == "Sendi")
+        if (username.ToLower() == "sendi")
         {
             Console.WriteLine("You Sendi, ");
         } 
