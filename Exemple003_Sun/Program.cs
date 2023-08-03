@@ -1,4 +1,4 @@
-﻿// My class Example003_Sun
+﻿// My class Example003_Sum
 internal class Program
 {
     public static void Main(string[] args)
