@@ -3,7 +3,7 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        int numberA = 31;
+        int numberA = 3;
         int numberB = 5;
         // result
         int result = numberA + numberB;
