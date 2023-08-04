@@ -1,7 +1,6 @@
-﻿internal class Program
-{
-    private static void Main(string[] args)
-    {
+﻿// coding new 
+
+   
         Console.Clear();
         //Console.SetCursorPosition(10, 4);
         //Console.WriteLine("+");
@@ -45,5 +44,3 @@
              Console.WriteLine("+");
              count++;
         }
-    }
-}
