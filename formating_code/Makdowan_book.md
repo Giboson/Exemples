@@ -82,7 +82,7 @@ Console.WriteLine();
              //  Wait for button  <Enter> kay to be Pressed
              Console.ReadLine();
             return 0;
-            
+
 ```
 
 ## code_6
@@ -109,26 +109,9 @@ static void GetUserData()
 
 ```
 
-```C#
+## code_7
 
-```
+```cs
 
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
 
 ```

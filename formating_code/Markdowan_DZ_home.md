@@ -238,6 +238,8 @@ int dayNumber = ReadInt("Введите число от 1 до 7: ");
         }
 ```
 
+# Task_8
+
 ```cs
 
 ```
