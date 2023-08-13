@@ -1,28 +1,6 @@
 # code_1
 
-```C#
-
-/**
-using System;
-Console.WriteLine("****Basic Console I/O*****");
-GetUserData();
-Console.ReadLine();
-static void GetUserData()
-{
-    // Получить информацию об имени и возрасте.
-    Console.Write("Please enter your name: "); // Предложить ввести имя
-    string userName = Console.ReadLine();
-    Console.Write("Please enter your age: "); // Предложить ввести возраст
-    string userAge = Console.ReadLine();
-    // Просто ради забавы изменить цвет переднего плана.
-    ConsoleColor prevColor = Console.ForegroundColor;
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    // Вывести полученную информацию на консоль.
-    Console.WriteLine("Hello {0}! You are {1} years old.", userName, userAge);
-    // Восстановить предыдущий цвет переднего плана.
-    Console.ForegroundColor = prevColor;
-    }
-**/
+```cs
         // Демонстрация применения некоторых дескрипторов формата,
         Console.WriteLine("The value 99999 in various formats:");
         Console.WriteLine("c format:{0:c}",     99999);
@@ -41,28 +19,7 @@ static void GetUserData()
 
 ## code_2
 
-```C#
-
-using System;
-using System.Numerics;
-
-/**
-Console.WriteLine("=> Data Declarations:");
-// Локальные переменные объявляются и инициализируются так:
-// типДанных имяПеременной = начальноеЗначение;
-int mylnt = 0;
-string myString;
-myString = "This is my character data";
-// Объявить три переменных типа bool в одной строке,
-bool b1 = true, b2 = false, b3 = b1;
-// Использовать тип данных System.Boolean
-// для объявления булевской переменной.
-System.Boolean b4 = false;
-Console.WriteLine("Your data: {0}, {1}, {2}, {3}, {4}, {5}",
-mylnt, myString, b1, b2, b3, b4);
-Console.WriteLine();
-**/
-
+```cs
 
     Console.WriteLine("=> Using new to create variables:");
     bool b = new bool();             // Устанавливается в false
@@ -77,7 +34,7 @@ Console.WriteLine();
 
 ## code_3
 
-```C#
+```cs
             // Set up Console UI (CUI)
             Console.Title = "My Rocking App";
             Console.ForegroundColor = ConsoleColor.White;
@@ -88,7 +45,31 @@ Console.WriteLine();
             Console.BackgroundColor = ConsoleColor.Black;
             //  Wait for button  <Enter> kay to be Pressed
              Console.ReadLine();
-/**
+
+```
+
+## code_4
+
+```cs
+Console.WriteLine("=> Data Declarations:");
+// Локальные переменные объявляются и инициализируются так:
+// типДанных имяПеременной = начальноеЗначение;
+int mylnt = 0;
+string myString;
+myString = "This is my character data";
+// Объявить три переменных типа bool в одной строке,
+bool b1 = true, b2 = false, b3 = b1;
+// Использовать тип данных System.Boolean
+// для объявления булевской переменной.
+System.Boolean b4 = false;
+Console.WriteLine("Your data: {0}, {1}, {2}, {3}, {4}, {5}",
+mylnt, myString, b1, b2, b3, b4);
+Console.WriteLine();
+```
+
+## code_5
+
+```cs
             Console.WriteLine("**************************");
             Console.WriteLine("***** My First C# App*****");
             Console.WriteLine("**************************");
@@ -101,21 +82,30 @@ Console.WriteLine();
              //  Wait for button  <Enter> kay to be Pressed
              Console.ReadLine();
             return 0;
-**/
-
+            
 ```
 
-## code_4
+## code_6
 
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
+```cs
+Console.WriteLine("****Basic Console I/O*****");
+GetUserData();
+Console.ReadLine();
+static void GetUserData()
+{
+    // Получить информацию об имени и возрасте.
+    Console.Write("Please enter your name: "); // Предложить ввести имя
+    string userName = Console.ReadLine();
+    Console.Write("Please enter your age: "); // Предложить ввести возраст
+    string userAge = Console.ReadLine();
+    // Просто ради забавы изменить цвет переднего плана.
+    ConsoleColor prevColor = Console.ForegroundColor;
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    // Вывести полученную информацию на консоль.
+    Console.WriteLine("Hello {0}! You are {1} years old.", userName, userAge);
+    // Восстановить предыдущий цвет переднего плана.
+    Console.ForegroundColor = prevColor;
+    }
 
 ```
 

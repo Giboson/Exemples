@@ -1,7 +1,7 @@
 
 # Lessen_1
 
-```C#
+```cs
 
         Console.WriteLine("Username");
         string usernmae = Console.ReadLine();
@@ -12,7 +12,7 @@
 
 # Lesson_2
 
-```C#
+```cs
 
         // int number =  10,  double = number 10.5 
         double numberA = 12;
@@ -23,7 +23,7 @@
 
 # Lesson_3
 
-```C#
+```cs
 
 Console.Write("the username, ");
         string username = Console.ReadLine();
@@ -41,7 +41,7 @@ Console.Write("the username, ");
 
 # Lesson_4
 
-```C#
+```cs
 
    int a = 1;
         int b = 2;
@@ -63,7 +63,7 @@ Console.Write("the username, ");
 
 # Lesson_5
 
-```C#
+```cs
 
 
             Console.WriteLine("Pascal Triangle Program");
@@ -94,7 +94,7 @@ Console.Write("the username, ");
 
 # Lesson_6
 
-```C#
+```cs
 
         Console.Clear();
         //Console.SetCursorPosition(10, 4);
@@ -143,7 +143,7 @@ Console.Write("the username, ");
 
 Lesson_7
 
-```C#
+```cs
 
  int Max(int arg1, int arg2, int arg3)
     {
@@ -175,7 +175,7 @@ Lesson_7
 
 # Lesson_8
 
-```C#
+```cs
 
 int Max(int arg1, int arg2, int arg3)
     {
@@ -201,7 +201,7 @@ int Max(int arg1, int arg2, int arg3)
 
 # Lesson_9
 
-```C#
+```cs
 
     // sorting numbers in order
         //             0   1   2   3   4   5   6   7   8   9  10   11  12
@@ -225,7 +225,7 @@ int Max(int arg1, int arg2, int arg3)
 
 # Lessen_10
 
-```C#
+```cs
 
     int c3 = 31;
     // code formating (1)(2)(3)
@@ -243,7 +243,7 @@ int Max(int arg1, int arg2, int arg3)
 
 # Lesson_11
 
-```C#
+```cs
 
  int length = collection.Length;
             int index = 0;
@@ -297,7 +297,7 @@ int Max(int arg1, int arg2, int arg3)
 
 # Lesson_12
 
-```C#
+```cs
  int numberA = new Random().Next(1, 10); // Number Random 0 do 9 
         Console.WriteLine(numberA); 
         int numberB = new Random().Next(1, 10); // Number Random 0 do 9
@@ -309,38 +309,6 @@ int Max(int arg1, int arg2, int arg3)
 
 # Lesson_13
 
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
-
-```
-
-```C#
+```cs
 
 ```
