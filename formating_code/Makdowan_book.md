@@ -1,5 +1,7 @@
-code_1
+# code_1
+
 ```C#
+
 /**
 using System;
 Console.WriteLine("****Basic Console I/O*****");
@@ -36,8 +38,11 @@ static void GetUserData()
         Console.WriteLine("x format:{0:e}", 99999);
 
 ```
-code_2
+
+# code_2
+
 ```C#
+
 using System;
 using System.Numerics;
 
@@ -69,7 +74,9 @@ Console.WriteLine();
     Console.WriteLine("{0}, {1}, {2}, {3}", b, i, d, dt);
     Console.WriteLine();
 ```
-code_3
+
+# code_3
+
 ```C#
             // Set up Console UI (CUI)
             Console.Title = "My Rocking App";
@@ -95,23 +102,43 @@ code_3
              Console.ReadLine();
             return 0;
 **/
+
 ```
-code_4
+
+# code_4
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
