@@ -1,5 +1,5 @@
 
-# code_1
+## code_1
 
 ```cs
         // Демонстрация применения некоторых дескрипторов формата,
@@ -15,6 +15,7 @@
         Console.WriteLine("е format:{0:X}", 99999);
         Console.WriteLine("X format:{0:x}", 99999);
         Console.WriteLine("x format:{0:e}", 99999);
+
 
 ```
 
@@ -130,6 +131,23 @@ static void GetUserData()
 ```
 
 ## code_8
+
+```cs
+    Console.WriteLine("=> char type Functionality:"); 
+        char myChar = 'a';
+    Console.WriteLine("char.IsDigit ( 'a') : {0}", char.IsDigit(myChar));
+    Console.WriteLine("char.IsLetter ( 'a' ) : {0}", char.IsLetter(myChar)); 
+    Console.WriteLine("char.IsWhiteSpace('Hello There', 5): {0}",
+        char.IsWhiteSpace("Hello There", 5));
+    Console.WriteLine("char.IsWhiteSpace('Hello There', 6): {0}",
+        char.IsWhiteSpace("Hello There", 6));
+    Console.WriteLine("char.IsPunctuation('?'): {0}",
+        char.IsPunctuation('?'));
+    Console.WriteLine();
+
+```
+
+## code_9
 
 ```cs
 
