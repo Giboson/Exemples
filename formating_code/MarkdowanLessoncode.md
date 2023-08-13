@@ -1,19 +1,24 @@
 
-Lesson_1 
+# Lessen_1
+
 ```C#
         Console.WriteLine("Username");
         string usernmae = Console.ReadLine();
         Console.WriteLine("Hi, ");
         Console.WriteLine(usernmae);
 ```
-Lesson_2 
+
+# Lesson_2
+
 ```C#
         // int number =  10,  double = number 10.5 
         double numberA = 12;
         double numberB = 5;
         Console.WriteLine(numberA / numberB);
 ```
-Lesson_3
+
+# Lesson_3
+
 ```C#
 Console.Write("the username, ");
         string username = Console.ReadLine();
@@ -28,7 +33,9 @@ Console.Write("the username, ");
             Console.WriteLine(username);
         }
 ```
-Lesson_4
+
+# Lesson_4
+
 ```C#
    int a = 1;
         int b = 2;
@@ -47,11 +54,11 @@ Lesson_4
         Console.Write("max = ");
         Console.WriteLine(max);
 ```
-Lesson_5
+
+# Lesson_5
+
 ```C#
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+
 
             Console.WriteLine("Pascal Triangle Program");
             Console.Write("Enter the number of rows: ");
@@ -78,7 +85,9 @@ Lesson_5
             }
             Console.WriteLine();    
 ```
-Lesson_6
+
+# Lesson_6
+
 ```C#
 
         Console.Clear();
@@ -125,7 +134,9 @@ Lesson_6
              count++;
         }
 ```
+
 Lesson_7
+
 ```C#
  int Max(int arg1, int arg2, int arg3)
     {
@@ -154,7 +165,9 @@ Lesson_7
         Max(a3,b3,c3));
     Console.WriteLine(max);
 ```
-Lesson_8
+
+# Lesson_8
+
 ```C#
 int Max(int arg1, int arg2, int arg3)
     {
@@ -177,7 +190,9 @@ int Max(int arg1, int arg2, int arg3)
                   );
                   Console.WriteLine(result);
 ```
-Lesson_9
+
+# Lesson_9
+
 ```C#
     // sorting numbers in order
         //             0   1   2   3   4   5   6   7   8   9  10   11  12
@@ -198,7 +213,9 @@ Lesson_9
             index++;
         }
 ```
-Lessen_10
+
+# Lessen_10
+
 ```C#
     int c3 = 31;
     // code formating (1)(2)(3)
@@ -212,8 +229,11 @@ Lessen_10
         Max(a3,b3,c3));
     Console.WriteLine(max);
 ```
-Lesson_11
+
+# Lesson_11
+
 ```C#
+
  int length = collection.Length;
             int index = 0;
             int position = 0;
@@ -263,7 +283,9 @@ Lesson_11
     int pos = IndexOf(array, 4);
     Console.WriteLine(pos);
 ```
-Lesson_12
+
+# Lesson_12
+
 ```C#
  int numberA = new Random().Next(1, 10); // Number Random 0 do 9 
         Console.WriteLine(numberA); 
@@ -273,43 +295,41 @@ Lesson_12
         int result = numberA + numberB;
         Console.WriteLine(result);
 ```
-Lesson_13
+
+# Lesson_13
+
 ```C#
 
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
+
 ```
+
 ```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
-```
-```C#
+
 ```
