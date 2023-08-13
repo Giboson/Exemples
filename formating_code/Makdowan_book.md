@@ -74,7 +74,7 @@ code_3
             // Set up Console UI (CUI)
             Console.Title = "My Rocking App";
             Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("***********************************");
             Console.WriteLine("*****Welcome to My Rocking App*****");
             Console.WriteLine("***********************************");
@@ -96,6 +96,7 @@ code_3
             return 0;
 **/
 ```
+code_4
 ```C#
 ```
 ```C#
