@@ -1,20 +1,17 @@
 ﻿// For all sources
 
-    Console.WriteLine ("=> Data type parsing with TryParse:"); 
-        if (bool.TryParse("True", out bool b));
-        {
-        Console.WriteLine("Value of b: {0}", b);  // Вывод значения b
-        }
-        string value = "Hello";
-        if (double.TryParse(value, out double d))
-        {
-        Console.WriteLine("Value of d: {0}", d) ;  // Вывод значения d
-        }
-        else
-        {
-        // Преобразование потерпело неудачу
-        Console.WriteLine("Failed to convert the input ({0}) to a double",value);
-        }
-        Console.WriteLine();
+    Console.WriteLine("=> Dates and Times:");
+    // Этот конструктор принимает год, месяц и день.
+        DateTime dt = new DateTime (2015, 10, 17);
+        // Какой это день месяца?
+        Console.WriteLine("The day of {0} is {1}", dt.Date, dt.DayOfWeek);
+        // Сейчас месяц декабрь.
+        dt = dt.AddMonths(2);
+        Console.WriteLine("Daylight savings: {0}", dt.IsDaylightSavingTime());
+        // Этот конструктор принимает часы, минуты и секунды.
+        TimeSpan ts = new TimeSpan(4, 30, 0) ;
+        Console.WriteLine(ts);
+        // Вычесть 15 минут из текущего значения TimeSpan и вывести результат.
+        Console.WriteLine(ts.Subtract (new TimeSpan(0, 15, 0)));
 
 
