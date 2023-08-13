@@ -39,7 +39,7 @@ static void GetUserData()
 
 ```
 
-# code_2
+## code_2
 
 ```C#
 
@@ -75,7 +75,7 @@ Console.WriteLine();
     Console.WriteLine();
 ```
 
-# code_3
+## code_3
 
 ```C#
             // Set up Console UI (CUI)
@@ -105,7 +105,7 @@ Console.WriteLine();
 
 ```
 
-# code_4
+## code_4
 
 ```C#
 
