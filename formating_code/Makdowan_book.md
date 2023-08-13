@@ -21,9 +21,7 @@ static void GetUserData()
     Console.ForegroundColor = prevColor;
     }
 **/
-// Демонстрация применения некоторых дескрипторов формата,
-
-
+        // Демонстрация применения некоторых дескрипторов формата,
         Console.WriteLine("The value 99999 in various formats:");
         Console.WriteLine("c format:{0:c}",     99999);
         Console.WriteLine("d9 format:{0:d9}",   99999);
