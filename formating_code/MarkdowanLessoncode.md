@@ -2,24 +2,29 @@
 # Lessen_1
 
 ```C#
+
         Console.WriteLine("Username");
         string usernmae = Console.ReadLine();
         Console.WriteLine("Hi, ");
         Console.WriteLine(usernmae);
+
 ```
 
 # Lesson_2
 
 ```C#
+
         // int number =  10,  double = number 10.5 
         double numberA = 12;
         double numberB = 5;
         Console.WriteLine(numberA / numberB);
+
 ```
 
 # Lesson_3
 
 ```C#
+
 Console.Write("the username, ");
         string username = Console.ReadLine();
 
@@ -37,6 +42,7 @@ Console.Write("the username, ");
 # Lesson_4
 
 ```C#
+
    int a = 1;
         int b = 2;
         int c = 6;
@@ -138,6 +144,7 @@ Console.Write("the username, ");
 Lesson_7
 
 ```C#
+
  int Max(int arg1, int arg2, int arg3)
     {
         int result = arg1;
@@ -169,6 +176,7 @@ Lesson_7
 # Lesson_8
 
 ```C#
+
 int Max(int arg1, int arg2, int arg3)
     {
         int result = arg1;
@@ -194,6 +202,7 @@ int Max(int arg1, int arg2, int arg3)
 # Lesson_9
 
 ```C#
+
     // sorting numbers in order
         //             0   1   2   3   4   5   6   7   8   9  10   11  12
         int[] array = {1, 12, 31, 4, 15, 16, 17, 18, 19, 10, 111, 121, 18};
@@ -217,6 +226,7 @@ int Max(int arg1, int arg2, int arg3)
 # Lessen_10
 
 ```C#
+
     int c3 = 31;
     // code formating (1)(2)(3)
     //(2) int max1 = Max(a1,b1,c1); int max2 = Max(a2,b2,c2); int max3 = Max(a3,b3,c3); int max = Max(max1, max2, max3); 
@@ -228,6 +238,7 @@ int Max(int arg1, int arg2, int arg3)
         Max(a2,b2,c2),
         Max(a3,b3,c3));
     Console.WriteLine(max);
+
 ```
 
 # Lesson_11
