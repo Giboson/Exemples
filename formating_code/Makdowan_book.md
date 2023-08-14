@@ -247,6 +247,7 @@ static void GetUserData()
 ## code_13
 
 ```cs
+
     Console.WriteLine("=> String equality:");
     string si = "Hello!";
     string s2 = "Yo!";
@@ -267,5 +268,27 @@ static void GetUserData()
 ## code_14
 
 ```cs
+        Console.WriteLine("=> String equality (Case Insensitive:");
+    string s1 = "Hello!";
+    string s2 = "HELLO!";
+    Console.WriteLine("s1 = {0}", s1);
+    Console.WriteLine("s2 = (0}", s2);
+    Console.WriteLine();
+    // Проверить результаты изменения стандартных правил сравнения.
+        Console.WriteLine("Default rules: sl={0},s2={1}si.Equals(s2): {2}",s1, s2, s1.Equals(s2));
+        Console.WriteLine("Ignore case: si.Equals(s2,StringComparison.OrdinallgnoreCase): {0}", s1.Equals(s2, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine("Ignore case, Invariant Culture: si.Equals(s2, StringComparison.InvariantCulturelgnoreCase): {0}",s1.Equals(s2, StringComparison.InvariantCultureIgnoreCase));
+        Console.WriteLine();
+        Console.WriteLine("Default rules: sl={0},s2={1} sl.IndexOf(\"E\"): {2}",s1, s2, s1.IndexOf("E"));
+        Console.WriteLine("Ignore case: si.IndexOf(\"E\",StringComparison.OrdinalIgnoreCase):{0}", s1.IndexOf("E",StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine("Ignore case, Invariant Culture: si.IndexOf(\"E\",StringComparison.InvariantCulturelgnoreCase): {0}", s1.IndexOf("E", StringComparison.InvariantCultureIgnoreCase));
+        Console.WriteLine();
+
+```
+
+## code_15
+
+```cs
+
 
 ```
