@@ -2,52 +2,6 @@
 # codeTest1
 
 ```cs
-/**
-        Принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-        14212 -> нет
-        23432 -> да
-        12821 -> да
-*/
-
-  using System;
-
-public class Answer
-{
-    static bool IsPalindrome(int number)
-    {
-        // преобразование целого числа в строку
-        string num = number.ToString();
-        // переверните строку
-        char[] reversed_num = num.ToCharArray();
-        Array.Reverse(reversed_num);
-        string reversed_num_str = new string(reversed_num);
-        // проверка того, является ли число палиндромом или нет
-        if (num == reversed_num_str) {
-            return true;
-        }
-        return false;
-    }
-  
-  // Не удаляйте и не меняйте метод Main! 
-      static  void Main(string[] args) {
-        int number;
-
-        if (args.Length >= 1) {
-            number = int.Parse(args[0]);
-        } else 
-        {
-           // Здесь вы можете поменять значения для отправки кода на Выполнение
-            number = 14212;
-            
-
-        }
-
-
-        // Не удаляйте строки ниже
-        bool result = IsPalindrome(number);
-        System.Console.WriteLine($"{result}");
-    }
-}    
 
 ```
 
