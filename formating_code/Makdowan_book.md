@@ -289,6 +289,34 @@ static void GetUserData()
 ## code_15
 
 ```cs
+    Console.WriteLine("=> Immutable Strings:\a");
+    // Установить начальное значение для строки,
+    string s1 = "This s1 my string.";
+    Console.WriteLine("s1 = {0}", s1);
+    // Преобразована ли строка s1 в верхний регистр?
+    string upperstring = s1.ToUpper();
+    Console.WriteLine("upperstring = {0}", upperstring);
+    // Нет! Строка s1 осталась в том же виде!
+    Console.WriteLine("s1 = {0}", s1);
 
+```
+
+## code_16
+
+```cs
+    using System.Text;
+    
+    Console.WriteLine("=> Using the StringBuilder:");
+    StringBuilder sb = new StringBuilder("******Fantastic Games *****");
+    sb.Append("\n");
+    sb.AppendLine("Half Life");
+    sb.AppendLine("Morrowind");
+    sb.AppendLine("Deus Ex" + "2");
+    sb.AppendLine("System Shock");
+    Console.WriteLine(sb.ToString());
+    sb.Replace("2", " Invisible War");
+    Console.WriteLine(sb.ToString());
+    Console.WriteLine("sb has {0} chars.", sb.Length);
+    Console.WriteLine();
 
 ```
