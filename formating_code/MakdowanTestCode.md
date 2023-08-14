@@ -14,8 +14,18 @@
 public class Answer
 {
     static bool IsPalindrome(int number)
-     {
-        if (number < 0)
+    {
+        // преобразование целого числа в строку
+        string num = number.ToString();
+        // переверните строку
+        char[] reversed_num = num.ToCharArray();
+        Array.Reverse(reversed_num);
+        string reversed_num_str = new string(reversed_num);
+        // проверка того, является ли число палиндромом или нет
+        if (num == reversed_num_str) {
+            return true;
+        }
+        return false;
     }
   
   // Не удаляйте и не меняйте метод Main! 
@@ -24,9 +34,11 @@ public class Answer
 
         if (args.Length >= 1) {
             number = int.Parse(args[0]);
-        } else {
+        } else 
+        {
            // Здесь вы можете поменять значения для отправки кода на Выполнение
-            number = 64546;
+            number = 14212;
+            
 
         }
 
