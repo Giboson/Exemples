@@ -1,17 +1,14 @@
 ﻿// For all sources
 
-using System.Text;
-    Console.WriteLine("=> Using the StringBuilder:");
-    StringBuilder sb = new StringBuilder("******Fantastic Games *****");
-    sb.Append("\n");
-    sb.AppendLine("Half Life");
-    sb.AppendLine("Morrowind");
-    sb.AppendLine("Deus Ex" + "2");
-    sb.AppendLine("System Shock");
-    Console.WriteLine(sb.ToString());
-    sb.Replace("2", " Invisible War");
-    Console.WriteLine(sb.ToString());
-    Console.WriteLine("sb has {0} chars.", sb.Length);
-    Console.WriteLine();
+    using System;
 
-   
+    Console.WriteLine("**** Fun With type conversions ****");
+    // Сложить две переменные типа short и вывести результат.
+    short numb1 = 9, numb2 = 10;
+    Console.WriteLine("{0} + {1} = {2}", numb1, numb2, Add(numb1, numb2));
+
+    Console.ReadLine();
+    static int Add(int x, int y)
+    {
+        return x + y;
+    }

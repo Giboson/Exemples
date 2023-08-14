@@ -238,7 +238,7 @@ static void GetUserData()
     // firstName в нижнем регистре.
     Console.WriteLine("firstName contains the letter у?:{0}",firstName.Contains("y")); 
     // Содержит ли firstName букву у?
-    Console.WriteLine("firstName after replace: {0}", firstName.Replace("dy", "")); 
+    Console.WriteLine("firstName after replace: {0}", firstName.Replace("y", "")); 
     // firstName после замены.
     Console.WriteLine();
 
@@ -305,7 +305,7 @@ static void GetUserData()
 
 ```cs
     using System.Text;
-    
+
     Console.WriteLine("=> Using the StringBuilder:");
     StringBuilder sb = new StringBuilder("******Fantastic Games *****");
     sb.Append("\n");
@@ -318,5 +318,23 @@ static void GetUserData()
     Console.WriteLine(sb.ToString());
     Console.WriteLine("sb has {0} chars.", sb.Length);
     Console.WriteLine();
+
+```
+
+## code_17
+
+```cs
+    using System;
+
+    Console.WriteLine("**** Fun With type conversions ****");
+    // Сложить две переменные типа short и вывести результат.
+    short numb1 = 9, numb2 = 10;
+    Console.WriteLine("{0} + {1} = {2}", numb1, numb2, Add(numb1, numb2));
+
+    Console.ReadLine();
+    static int Add(int x, int y)
+    {
+        return x + y;
+    }
 
 ```
