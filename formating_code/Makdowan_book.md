@@ -311,22 +311,29 @@
 ## code_14
 
 ```cs
-        Console.WriteLine("=> String equality (Case Insensitive:");
-    string s1 = "Hello!";
-    string s2 = "HELLO!";
-    Console.WriteLine("s1 = {0}", s1);
-    Console.WriteLine("s2 = (0}", s2);
-    Console.WriteLine();
-    // Проверить результаты изменения стандартных правил сравнения.
-        Console.WriteLine("Default rules: sl={0},s2={1}si.Equals(s2): {2}",s1, s2, s1.Equals(s2));
-        Console.WriteLine("Ignore case: si.Equals(s2,StringComparison.OrdinallgnoreCase): {0}", s1.Equals(s2, StringComparison.OrdinalIgnoreCase));
-        Console.WriteLine("Ignore case, Invariant Culture: si.Equals(s2, StringComparison.InvariantCulturelgnoreCase): {0}",s1.Equals(s2, StringComparison.InvariantCultureIgnoreCase));
-        Console.WriteLine();
-        Console.WriteLine("Default rules: sl={0},s2={1} sl.IndexOf(\"E\"): {2}",s1, s2, s1.IndexOf("E"));
-        Console.WriteLine("Ignore case: si.IndexOf(\"E\",StringComparison.OrdinalIgnoreCase):{0}", s1.IndexOf("E",StringComparison.OrdinalIgnoreCase));
-        Console.WriteLine("Ignore case, Invariant Culture: si.IndexOf(\"E\",StringComparison.InvariantCulturelgnoreCase): {0}", s1.IndexOf("E", StringComparison.InvariantCultureIgnoreCase));
-        Console.WriteLine();
-
+    /**
+    * Применить тип decimal для расчета будущей стоимости
+    * капиталовложений.
+    */
+    using System;
+    class FutVal 
+    {
+    static void Main()
+    {
+    decimal amount;
+    decimal rate_of_return;
+    int years, i;
+        amount = 1000.0M;
+        rate_of_return = 0.07M;
+        years = 10;
+        Console.WriteLine("Первоначальные капиталовложения: RUB " + amount);
+        Console.WriteLine("Норма прибыли: " + rate_of_return);
+        Console.WriteLine("В течение " + years + " лет");
+        for(i = 0; i < years; i++)
+        amount = amount + (amount * rate_of_return);
+        Console.WriteLine("Будущая стоимость равна RUB " + amount);
+    }
+    }
 ```
 
 ## code_15

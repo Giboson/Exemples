@@ -1,19 +1,26 @@
 ﻿// For all sources
 
 
-// Использовать тип decimal для расчета скидки.
+/**
+* Применить тип decimal для расчета будущей стоимости
+* капиталовложений.
+*/
     using System;
-    class UseDecimal 
+    class FutVal 
     {
-    static void Main() 
+    static void Main()
     {
-    decimal price;
-    decimal discount;
-    decimal discounted_price;
-    // Рассчитать цену со скидкой.
-    price = 19.95m;
-    discount = 0.15m; // норма скидки составляет 15%
-    discounted_price = price - ( price * discount);
-    Console.WriteLine("Цена со скидкой: RUB " + discounted_price);
+    decimal amount;
+    decimal rate_of_return;
+    int years, i;
+        amount = 1000.0M;
+        rate_of_return = 0.07M;
+        years = 10;
+        Console.WriteLine("Первоначальные капиталовложения: RUB " + amount);
+        Console.WriteLine("Норма прибыли: " + rate_of_return);
+        Console.WriteLine("В течение " + years + " лет");
+        for(i = 0; i < years; i++)
+        amount = amount + (amount * rate_of_return);
+        Console.WriteLine("Будущая стоимость равна RUB " + amount);
     }
     }
