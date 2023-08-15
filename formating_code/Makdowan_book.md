@@ -255,45 +255,33 @@
     Console.WriteLine("Радиус равен " + r);
     }
     }
-    
+
 ```
 
 ## code_12
 
 ```cs
     
-    Console.WriteLine("=> Use Digit Separators:"); 
-    Console.Write("Integer:");
-    Console.WriteLine(123_456);
-    Console.Write("Long:");
-    Console.WriteLine(123_456_789L);
-    Console.Write("Float:");
-    Console.WriteLine(123_456.1234F);
-    Console.Write("Double:");
-    Console.WriteLine(123_456.12);
-    Console.Write("Decimal:");
-    Console.WriteLine(123_456.12M);
-
-    Console.WriteLine ("=> Use Binary Literals:");
-    Console.WriteLine("Sixteen: {0}" , 0b0001_0000);
-    Console.WriteLine("Thirty Two: {0}",0b0010_0000);
-    Console.WriteLine("Sixty Four: {0}", 0b0100_0000);
-
-    Console.WriteLine("=> Basic String functionality:"); 
-    string firstName = "Freddy";
-    Console.WriteLine("Value of firstName: {0}", firstName);
-    // Значение firstName.
-    Console.WriteLine("firstName has {0} characters.", firstName.Length);
-    // Длина firstname.
-    Console.WriteLine("firstName in uppercase: {0}", firstName.ToUpper());
-    // firstName в верхнем регистре.
-    Console.WriteLine("firstName in lowercase: {0}", firstName.ToLower ());
-    // firstName в нижнем регистре.
-    Console.WriteLine("firstName contains the letter у?:{0}",firstName.Contains("y")); 
-    // Содержит ли firstName букву у?
-    Console.WriteLine("firstName after replace: {0}", firstName.Replace("y", "")); 
-    // firstName после замены.
+    // Продемонстрировать применение тригонометрических функций.
+    using System;
+    class Trigonometry 
+    {
+    static void Main() 
+    {
+    Double theta; // угол в радианах
+        for(theta = 0.1; theta <= 1.0;
+        theta = theta +0.1)  
+    {
+    Console.WriteLine("Синус угла " + theta +
+    " равен " + Math.Sin(theta));
+    Console.WriteLine("Косинус угла " + theta +
+    " равен " + Math.Cos(theta));
+    Console.WriteLine("Тангенс угла " + theta +
+    " равен " + Math.Tan(theta));
     Console.WriteLine();
+    }
+    }
+    }
 
 ```
 
