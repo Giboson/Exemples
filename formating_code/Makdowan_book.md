@@ -2,19 +2,19 @@
 # code_1
 
 ```cs
-        // Демонстрация применения некоторых дескрипторов формата,
-        Console.WriteLine("The value 99999 in various formats:");
-        Console.WriteLine("c format:{0:c}",     99999);
-        Console.WriteLine("d9 format:{0:d9}",   99999);
-        Console.WriteLine("f3 format:{0:f3}",   99999);
-        Console.WriteLine("n format:{0:n}",     99999);
-        // Обратите внимание, что использование для символа
-        // шестнадцатеричного формата верхнего или нижнего регистра
-        // определяет регистр отображаемых символов.
-        Console.WriteLine("Е format:{0:E}", 99999);
-        Console.WriteLine("е format:{0:X}", 99999);
-        Console.WriteLine("X format:{0:x}", 99999);
-        Console.WriteLine("x format:{0:e}", 99999);
+
+    // В эту версию не включена строка "using System;".
+    using System;
+
+    class Example 
+    {
+    // Любая программа на C# начинается с вызова метола Main().
+    static void Main() 
+    {
+    // Здесь имя Console.WriteLine полностью определено.
+    Console.WriteLine("Простая программа на С#.");
+    }
+    }
 
 
 ```
@@ -23,30 +23,48 @@
 
 ```cs
 
-    Console.WriteLine("=> Using new to create variables:");
-    bool b = new bool();             // Устанавливается в false
-    int i = new int();              // Устанавливается в 0
-    double d = new double();        // Устанавливается в 0.0
-    DateTime dt = new DateTime();    // Устанавливается
-                                    // в 1/1/0001 12:00:00 AM
+    // Эта программа демонстрирует применение переменных.
+    using System;
 
-    Console.WriteLine("{0}, {1}, {2}, {3}", b, i, d, dt);
-    Console.WriteLine();
+    class Example2 {
+    static void Main() {
+    int x; // здесь объявляется переменная
+    int y; // здесь объявляется еще одна переменная
+    x = 100; // здесь переменной х присваивается значение 100
+    Console.WriteLine("х содержит " + x);
+    y = x / 2;
+    Console.Write("у содержит х / 2: ");
+    Console.WriteLine(y);
+    }
+    }
 ```
 
 ## code_3
 
 ```cs
-            // Set up Console UI (CUI)
-            Console.Title = "My Rocking App";
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.WriteLine("***********************************");
-            Console.WriteLine("*****Welcome to My Rocking App*****");
-            Console.WriteLine("***********************************");
-            Console.BackgroundColor = ConsoleColor.Black;
-            //  Wait for button  <Enter> kay to be Pressed
-             Console.ReadLine();
+/*
+    * Эта программа демонстрирует отличия
+    * между типами данных int и double.
+*/
+    using System;
+    class Example3 
+    {
+    static void Main() 
+    {
+    int ivar; // объявить целочисленную переменную
+    double dvar; // объявить переменную с плавающей точкой
+        ivar = 100; // присвоить переменной ivar значение 100
+        dvar = 100.0; // присвоить переменной dvar значение 100.0
+    Console.WriteLine("Исходное значение ivar: " + ivar);
+    Console.WriteLine("Исходное значение dvar: " + dvar);
+    Console.WriteLine(); // вывести пустую строку
+    // Разделить значения обеих переменных на 3.
+        ivar = ivar / 3;
+        dvar = dvar / 3.0;
+    Console.WriteLine("Значение ivar после деления: " + ivar);
+    Console.WriteLine("Значение dvar после деления: " + dvar);
+    }
+    }
 
 ```
 
