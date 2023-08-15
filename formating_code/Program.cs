@@ -1,21 +1,15 @@
 ﻿// For all sources
 
-// Вычислить сумму и произведение чисел от 1 до 10.
-using System;
-class ProdSum {
-static void Main() 
-{
-    int prod;
-    int sum;
-    int i;
-    sum = 0;
-    prod = 1;
-    for(i=1; i <= 10; i++)  
+
+    // Продемонстрировать применение идентификатора со знаком @.
+    using System;
+    class IdTest 
     {
-    sum = sum + i;
-    prod = prod * i;
-    }
-    Console.WriteLine("Сумма равна " + sum);
-    Console.WriteLine("Произведение равно " + prod);
+    static void Main() 
+    {
+    int @if; // применение ключевого слова if
+    // в качестве идентификатора
+    for(@if = 0; @if < 10; @if++)
+    Console.WriteLine("@if равно " + @if);
     }
     }
