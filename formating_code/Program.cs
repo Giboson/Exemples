@@ -1,27 +1,14 @@
 ﻿// For all sources
 
-// Продемонстрировать применение условного оператора if.
+// Продемонстрировать применение оператора цикла for.
 using System;
-class IfDemo 
+class ForDemo
+ {
+    static void Main() 
     {
-static void Main() 
-    {
-    int a, b, c;
-    a = 2;
-    b = 3;
-    if(a < b) Console.WriteLine("а меньше b");
-    // He подлежит выводу.
-    if(a == b) Console.WriteLine("этого никто не увидит");
-    Console.WriteLine();
-    c = a - b; // с содержит -1
-    Console.WriteLine("с содержит -1");
-    if(c >= 0) Console.WriteLine("значение с неотрицательно");
-    if(c < 0) Console.WriteLine("значение с отрицательно");
-    Console.WriteLine();
-    c = b - a; // теперь с содержит 1
-    Console.WriteLine("с содержит 1");
-    if(c >= 0) Console.WriteLine("значение с неотрицательно");
-    if(c < 0) Console.WriteLine("значение с отрицательно ");
-
+    int count;
+    for(count = 0; count < 5; count = count+1)
+    Console.WriteLine("Это подсчет: " + count);
+    Console.WriteLine("Готово!");
     }
 }
