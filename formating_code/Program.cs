@@ -1,26 +1,24 @@
 ﻿// For all sources
 
 
-/**
-* Применить тип decimal для расчета будущей стоимости
-* капиталовложений.
-*/
+// Продемонстрировать применение типа bool.
     using System;
-    class FutVal 
+    class BoolDemo 
     {
-    static void Main()
+    static void Main() 
     {
-    decimal amount;
-    decimal rate_of_return;
-    int years, i;
-        amount = 1000.0M;
-        rate_of_return = 0.07M;
-        years = 10;
-        Console.WriteLine("Первоначальные капиталовложения: RUB " + amount);
-        Console.WriteLine("Норма прибыли: " + rate_of_return);
-        Console.WriteLine("В течение " + years + " лет");
-        for(i = 0; i < years; i++)
-        amount = amount + (amount * rate_of_return);
-        Console.WriteLine("Будущая стоимость равна RUB " + amount);
+        bool b;
+    b = false;
+    Console.WriteLine("b равно " + b);
+    b = true;
+        Console.WriteLine("b равно " + b);
+            // Логическое значение может управлять оператором if.
+        if(b) Console.WriteLine("Выполняется.");
+        b = false;
+        if (b) Console.WriteLine("He выполняется.");
+        // Результатом выполнения оператора отношения
+        // является логическое значение.
+        Console.WriteLine("10 > 9 равно " + (10 > 9));
     }
+
     }

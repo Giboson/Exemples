@@ -339,16 +339,27 @@
 ## code_15
 
 ```cs
-    Console.WriteLine("=> Immutable Strings:\a");
-    // Установить начальное значение для строки,
-    string s1 = "This s1 my string.";
-    Console.WriteLine("s1 = {0}", s1);
-    // Преобразована ли строка s1 в верхний регистр?
-    string upperstring = s1.ToUpper();
-    Console.WriteLine("upperstring = {0}", upperstring);
-    // Нет! Строка s1 осталась в том же виде!
-    Console.WriteLine("s1 = {0}", s1);
+   // Продемонстрировать применение типа bool.
+    using System;
+    class BoolDemo 
+    {
+    static void Main() 
+    {
+        bool b;
+    b = false;
+    Console.WriteLine("b равно " + b);
+    b = true;
+        Console.WriteLine("b равно " + b);
+            // Логическое значение может управлять оператором if.
+        if(b) Console.WriteLine("Выполняется.");
+        b = false;
+        if (b) Console.WriteLine("He выполняется.");
+        // Результатом выполнения оператора отношения
+        // является логическое значение.
+        Console.WriteLine("10 > 9 равно " + (10 > 9));
+    }
 
+    }
 ```
 
 ## code_16
