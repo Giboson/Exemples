@@ -867,6 +867,7 @@ class Implication
 ```cs
 // Продемонстрировать применение укороченных логических операторов.
 using System;
+
 class SCops
 {
     static void Main()
@@ -894,6 +895,7 @@ class SCops
 ```cs
 // Продемонстрировать значение побочных эффектов.
 using System;
+
 class SideEffects
 {
     static void Main()
@@ -945,6 +947,28 @@ class MakeEven
 ## code_37
 
  ```cs
+    // Применить поразрядный оператор И, чтобы определить,
+// является ли число нечетным.
+using System;
 
+class IsOdd
+{
+    static void Main()
+    {
+        ushort num;
+        num = 10;
+        if ((num & 1) == 1)
+            Console.WriteLine("He выводится.");
+        num = 11;
+        if ((num & 1) == 1)
+            Console.WriteLine(num + " — нечетное число.");
+    }
+}
 
  ```
+
+## code_38
+
+```cs
+
+```
