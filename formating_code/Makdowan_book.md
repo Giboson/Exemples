@@ -576,7 +576,7 @@
     for (count = 0; count < 10; /*count --> */ sum = count+1) 
     {
     Console.WriteLine("Это подсчет: " + count);
-    //int sun // Недопустимо!!!
+    //int sum // Недопустимо!!!
     for(count = 0; count < 2; count++)
     // вечный цикол :) не компилить 
     Console.WriteLine("В этой программе есть ошибка!");
@@ -685,6 +685,50 @@ class CastDemo
         b = 88; // код ASCII символа X
         ch = (char)b;
         Console.WriteLine("ch после присваивания 88: " + ch);
+    }
+}
+
+```
+
+## code_28
+
+```cs
+// Пример неожиданного результата продвижения типов!
+using System;
+
+class PromDemo
+{
+    static void Main()
+    {
+        byte b;
+        b = 10;
+        b = (byte)(b * b); // Необходимо приведение типов!!
+        Console.WriteLine("b: " + b);
+    }
+}
+```
+
+## code_29
+
+```cs
+// Пример приведения типов в выражениях.
+using System;
+
+class CastExpr
+{
+    static void Main()
+    {
+        double n;
+        for (n = 1.0; n <= 10; n++)
+        {
+            Console.WriteLine("Квадратный корень из {0} равен {1}",
+            n, Math.Sqrt(n));
+            Console.WriteLine("Целая часть числа: (0)",
+            (int)Math.Sqrt(n));
+            Console.WriteLine("Дробная часть числа: (0)",
+            Math.Sqrt(n) - (int)Math.Sqrt(n));
+            Console.WriteLine();
+        }
     }
 }
 
