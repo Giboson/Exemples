@@ -1,14 +1,20 @@
 ﻿// For all sources
 
-// Продемонстрировать применение оператора цикла for.
+// Продемонстрировать применение кодового блока.
 using System;
-class ForDemo
- {
-    static void Main() 
+class BlockDemo 
     {
-    int count;
-    for(count = 0; count < 5; count = count+1)
-    Console.WriteLine("Это подсчет: " + count);
-    Console.WriteLine("Готово!");
+static void Main() 
+    {
+    int i, j, d;
+    i = 5 ;
+    j = 10;
+    // Адресатом этого оператора if служит кодовый блок.
+    if(i != 0) {
+    Console.WriteLine("i не равно нулю");
+    d = j / i;
+    Console.WriteLine("j / i равно " + d);
     }
-}
+    }
+    }
+

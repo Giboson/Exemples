@@ -101,41 +101,41 @@ static void Main()
 ## code_5
 
 ```cs
-            Console.WriteLine("**************************");
-            Console.WriteLine("***** My First C# App*****");
-            Console.WriteLine("**************************");
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine();
-            for (int i = 0; i < args.Length; i++)
-            {
-                Console.WriteLine("args: {0}", args[i]);
-            }
-             //  Wait for button  <Enter> kay to be Pressed
-             Console.ReadLine();
-            return 0;
+    // Продемонстрировать применение оператора цикла for.
+    using System;
+    class ForDemo
+    {
+    static void Main() 
+    {
+    int count;
+    for(count = 0; count < 5; count = count+1)
+    Console.WriteLine("Это подсчет: " + count);
+    Console.WriteLine("Готово!");
+    }
+    }
+
 
 ```
 
 ## code_6
 
 ```cs
-Console.WriteLine("****Basic Console I/O*****");
-GetUserData();
-Console.ReadLine();
-static void GetUserData()
-{
-    // Получить информацию об имени и возрасте.
-    Console.Write("Please enter your name: "); // Предложить ввести имя
-    string userName = Console.ReadLine();
-    Console.Write("Please enter your age: "); // Предложить ввести возраст
-    string userAge = Console.ReadLine();
-    // Просто ради забавы изменить цвет переднего плана.
-    ConsoleColor prevColor = Console.ForegroundColor;
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    // Вывести полученную информацию на консоль.
-    Console.WriteLine("Hello {0}! You are {1} years old.", userName, userAge);
-    // Восстановить предыдущий цвет переднего плана.
-    Console.ForegroundColor = prevColor;
+// Продемонстрировать применение кодового блока.
+using System;
+class BlockDemo 
+    {
+static void Main() 
+    {
+    int i, j, d;
+    i = 5 ;
+    j = 10;
+    // Адресатом этого оператора if служит кодовый блок.
+    if(i != 0) {
+    Console.WriteLine("i не равно нулю");
+    d = j / i;
+    Console.WriteLine("j / i равно " + d);
+    }
+    }
     }
 
 ```
