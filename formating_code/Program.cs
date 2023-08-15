@@ -1,20 +1,17 @@
 ﻿// For all sources
 
 
-// Использовать спецификатор формата С для вывода
-// результата в местной валюте.
+    // Продемонстрировать применение управляющих
+    // последовательностей символов в строковых литералах.
     using System;
-    class UseDecimal 
+    class StrDemo 
     {
     static void Main() 
     {
-        decimal price;
-        decimal discount;
-        decimal discounted_price;
-    // рассчитать цену со скидкой,
-    price = 19.95m;
-    discount = 0.15m; // норма скидки составляет 15%
-    discounted_price = price - ( price * discount);
-    Console.WriteLine("Цена со скидкой: {0:C}", discounted_price);
+    Console.WriteLine("Первая строка\nВторая строка\nТретья строка");
+    Console.WriteLine("Один\tДва\tТри");
+    Console.WriteLine("Четыре\tПять\tШесть");
+    // Вставить кавычки.
+    Console.WriteLine("\"3ачем?\", спросил он.");
     }
     }

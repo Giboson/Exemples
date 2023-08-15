@@ -416,30 +416,19 @@
 
 ```cs
 
+    // Продемонстрировать применение управляющих
+    // последовательностей символов в строковых литералах.
     using System;
-
-    Console.WriteLine("**** Fun With type conversions ****");
-    // Явно привести int к short (и разрешить потерю данных)
-    short numb1 = 30000, numb2 = 30000;
-    short answer = (short)Add(numb1, numb2);
-
-    Console.WriteLine("{0} + {1} = {2}", numb1, numb2, answer);
-    
-    NarrowingAttempt();
-    Console.ReadLine();
-    static int Add(int x, int y)
+    class StrDemo 
     {
-        return x + y;
+    static void Main() 
+    {
+    Console.WriteLine("Первая строка\nВторая строка\nТретья строка");
+    Console.WriteLine("Один\tДва\tТри");
+    Console.WriteLine("Четыре\tПять\tШесть");
+    // Вставить кавычки.
+    Console.WriteLine("\"3ачем?\", спросил он.");
     }
-
-    static void NarrowingAttempt()
-    { 
-         byte myByte = 0;
-        int mylnt = 200;
-        // Явно привести int к byte (без потери данных).
-        myByte = (byte)mylnt;
-        Console.WriteLine("Value of myByte: {0}", myByte);
-    
     }
 
 ```
