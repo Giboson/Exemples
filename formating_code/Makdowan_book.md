@@ -221,6 +221,7 @@
 ```cs
         // Использовать тип byte.
     using System;
+
     class Use_byte 
     {
     static void Main() 
@@ -244,6 +245,7 @@
 ```cs
        // Определить радиус окружности по площади круга.
     using System;
+
     class FindRadius 
     {
     static void Main() 
@@ -264,6 +266,7 @@
     
     // Продемонстрировать применение тригонометрических функций.
     using System;
+
     class Trigonometry 
     {
     static void Main() 
@@ -291,6 +294,7 @@
 
     // Использовать тип decimal для расчета скидки.
     using System;
+
     class UseDecimal 
     {
     static void Main() 
@@ -316,6 +320,7 @@
     * капиталовложений.
     */
     using System;
+
     class FutVal 
     {
     static void Main()
@@ -341,6 +346,7 @@
 ```cs
    // Продемонстрировать применение типа bool.
     using System;
+
     class BoolDemo 
     {
     static void Main() 
@@ -352,7 +358,7 @@
         Console.WriteLine("b равно " + b);
             // Логическое значение может управлять оператором if.
         if(b) Console.WriteLine("Выполняется.");
-        b = false;
+            b = false;
         if (b) Console.WriteLine("He выполняется.");
         // Результатом выполнения оператора отношения
         // является логическое значение.
@@ -365,20 +371,21 @@
 ## code_16
 
 ```cs
-    using System.Text;
+       // Применить команды форматирования.
+    using System;
 
-    Console.WriteLine("=> Using the StringBuilder:");
-    StringBuilder sb = new StringBuilder("******Fantastic Games *****");
-    sb.Append("\n");
-    sb.AppendLine("Half Life");
-    sb.AppendLine("Morrowind");
-    sb.AppendLine("Deus Ex" + "2");
-    sb.AppendLine("System Shock");
-    Console.WriteLine(sb.ToString());
-    sb.Replace("2", " Invisible War");
-    Console.WriteLine(sb.ToString());
-    Console.WriteLine("sb has {0} chars.", sb.Length);
-    Console.WriteLine();
+    class DisplayOptions 
+    {
+    static void Main() 
+    {
+        int i;
+        Console.WriteLine("Число\tКвадрат\tКуб");
+        for(i = 1; i < 10; i++)
+        
+    Console.WriteLine("{0}\t{1}\t{2}", i, i*i, i*i*i);
+    }
+    
+    }
 
 ```
 

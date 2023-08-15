@@ -1,24 +1,16 @@
 ﻿// For all sources
 
 
-// Продемонстрировать применение типа bool.
+    // Применить команды форматирования.
     using System;
-    class BoolDemo 
+    class DisplayOptions 
     {
     static void Main() 
     {
-        bool b;
-    b = false;
-    Console.WriteLine("b равно " + b);
-    b = true;
-        Console.WriteLine("b равно " + b);
-            // Логическое значение может управлять оператором if.
-        if(b) Console.WriteLine("Выполняется.");
-        b = false;
-        if (b) Console.WriteLine("He выполняется.");
-        // Результатом выполнения оператора отношения
-        // является логическое значение.
-        Console.WriteLine("10 > 9 равно " + (10 > 9));
+    int i;
+    Console.WriteLine("Число\tКвадрат\tКуб");
+    for(i = 1; i < 10; i++)
+    Console.WriteLine("{0}\t{1}\t{2}", i, i*i, i*i*i);
     }
-
+    
     }
