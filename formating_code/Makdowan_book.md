@@ -948,7 +948,7 @@ class MakeEven
 
  ```cs
     // Применить поразрядный оператор И, чтобы определить,
-// является ли число нечетным.
+    // является ли число нечетным.
 using System;
 
 class IsOdd
@@ -970,5 +970,22 @@ class IsOdd
 ## code_38
 
 ```cs
+// Показать биты, составляющие байт.
+using System;
+
+class ShowBits
+{
+    static void Main()
+    {
+        int t;
+        byte val;
+        val = 123;
+        for (t = 128; t > 0; t = t / 2)
+        {
+            if ((val & t) != 0) Console.Write("1 ");
+            if ((val & t) == 0) Console.Write("0 ");
+        }
+    }
+}
 
 ```
