@@ -865,5 +865,86 @@ class Implication
 ## code_34
 
 ```cs
+// Продемонстрировать применение укороченных логических операторов.
+using System;
+class SCops
+{
+    static void Main()
+    {
+        int n, d;
+        n = 10;
+        d = 2;
+        if (d != 0 && (n % d) == 0)
+            Console.WriteLine(n + " делится нацело на " + d);
+        d = 0; // задать нулевое значение переменной d
+               // d равно нулю, поэтому второй операнд не вычисляется
+        if (d != 0 && (n % d) == 0)
+            Console.WriteLine(n + " делится нацело на " + d);
+        // Если теперь попытаться сделать то же самое без укороченного
+        // логического оператора, то возникнет ошибка из-за деления на нуль.
+        if (d != 0 & (n % d) == 0)
+            Console.WriteLine(n + " делится нацело на " + d);
+    }
+}
 
 ```
+
+## code_35
+
+```cs
+// Продемонстрировать значение побочных эффектов.
+using System;
+class SideEffects
+{
+    static void Main()
+    {
+        int i;
+        bool someCondition = false;
+        i = 0;
+        // Значение переменной i инкрементируется,
+        // несмотря на то, что оператор if не выполняется.
+        if (someCondition & (++i < 100))
+            Console.WriteLine("He выводится");
+        Console.WriteLine("Оператор if выполняется: " + i); // выводится 1
+                                                            // В данном случае значение переменной i не инкрементируется,
+                                                            // поскольку инкремент в укороченном логическом операторе опускается.
+        if (someCondition && (++i < 100))
+            Console.WriteLine("He выводится");
+        Console.WriteLine("Оператор if выполняется: " + i); // по-прежнему 1 !!
+    }
+}
+
+```
+
+## code_36
+
+```cs
+
+// Применить поразрядный оператор И, чтобы сделать число четным.
+using System;
+
+class MakeEven
+{
+    static void Main()
+    {
+        ushort num;
+        ushort i;
+        for (i = 1; i <= 10; i++)
+        {
+            num = i;
+            Console.WriteLine("num: " + num);
+            num = (ushort)(num & 0xFFFE);
+            Console.WriteLine("num после сброса младшего разряда: "
+            + num + "\n");
+        }
+    }
+}
+
+```
+
+## code_37
+
+ ```cs
+
+
+ ```
