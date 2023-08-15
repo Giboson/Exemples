@@ -566,9 +566,11 @@
 *** Эта программа не может быть скомпилирована. ***
 */
     using System;
-    class NestVar {
+
+    class NestVar 
+    {
     static void Main()
-     {
+    {
     int count, sum;
    
     for (count = 0; count < 10; /*count --> */ sum = count+1) 
@@ -581,4 +583,109 @@
     }
     }
     }
+```
+
+## code_25
+
+```cs
+    // Продемонстрировать неявное преобразование типа long в тип double.
+    using System;
+    class LtoD 
+    {
+    static void Main() 
+    {
+    long L;
+    double D;
+    L = 100123285L;
+    D = L;
+    Console.WriteLine("L и D: " + L + " " + D);
+    }
+    }
+
+```
+
+## code_26
+
+```cs
+    // *** Эта программа не может быть скомпилирована. ***
+    using System;
+
+    class LtoD 
+    {
+    static void Main() 
+    {
+    long L;
+    double D;
+    D = 100123285.0;
+    L = D; // Недопустимо!!!
+    Console.WriteLine("L и D: " + L + " " + D);
+    }
+    }
+
+```
+
+## code_27
+
+```cs
+
+// Продемонстрировать приведение типов.
+using System;
+
+class CastDemo
+{
+    static void Main()
+    {
+        double x, y;
+        byte b;
+        int i;
+        char ch;
+        uint u;
+        short s;
+        long l;
+        x = 10.0;
+        y = 3.0;
+        // Приведение типа double к типу int, дробная часть числа теряется.
+        i = (int)(x / y);
+        Console.WriteLine("Целочисленный результат деления х / у: " + i);
+        Console.WriteLine();
+        // Приведение типа int к типу byte без потери данных,
+        i = 255;
+        b = (byte)i;
+        Console.WriteLine("b после присваивания 255: " + b +
+        " -- без потери данных.");
+        // Приведение типа int к типу byte с потерей данных,
+        i = 257;
+        b = (byte)i;
+        Console.WriteLine("b после присваивания 257: " + b +
+        " -- с потерей данных.");
+        Console.WriteLine();
+        // Приведение типа uint к типу short без потери данных.
+        u = 32000;
+        s = (short)u;
+        Console.WriteLine("s после присваивания 32000: " +
+        s + " -- без потери данных.");
+        // Приведение типа uint к типу short с потерей данных,
+        u = 64000;
+        s = (short)u;
+        Console.WriteLine("s после присваивания 64000: " +
+        s + " -- с потерей данных.");
+        Console.WriteLine();
+        // Приведение типа long к типу uint без потери данных.
+        l = 64000;
+        u = (uint)l;
+        Console.WriteLine("u после присваивания 64000: " + u +
+        " -- без потери данных.");
+        // Приведение типа long к типу uint с потерей данных.
+        l = -12;
+        u = (uint)l;
+        Console.WriteLine("и после присваивания -12: " + u +
+        " -- с потерей данных.");
+        Console.WriteLine();
+        // Приведение типа int к типу char,
+        b = 88; // код ASCII символа X
+        ch = (char)b;
+        Console.WriteLine("ch после присваивания 88: " + ch);
+    }
+}
+
 ```
