@@ -800,5 +800,37 @@ class PrePostDemo
 ## code_32
 
 ```cs
+    // Продемонстрировать применение операторов
+// отношения и логических операторов.
+using System;
+
+class RelLogOps
+{
+    static void Main()
+    {
+        int i, j;
+        bool b1, b2;
+        i = 10;
+        j = 11;
+        if (i < j) Console.WriteLine("i < j");
+        if (i <= j) Console.WriteLine("i <= j");
+        if (i != j) Console.WriteLine("i != j");
+        if (i == j) Console.WriteLine("Нельзя выполнить");
+        if (i >= j) Console.WriteLine("Нельзя выполнить");
+        if (i > j) Console.WriteLine("Нельзя выполнить");
+        b1 = true; 
+        b2 = false;
+        if (b1 & b2) Console.WriteLine("Нельзя выполнить");
+        if (!(b1 & b2)) Console.WriteLine("!(b1 & b2) — true");
+        if (b1 | b2) Console.WriteLine("b1 | b2 - true");
+        if (b1 ^ b2) Console.WriteLine("bl ^ b2 — true");
+    }
+}
+
+```
+
+## code_33
+
+```cs
 
 ```
