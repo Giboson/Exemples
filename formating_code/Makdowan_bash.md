@@ -1,10 +1,14 @@
 # folder
 
 ```sh
-    # no -> mkdir formating_code 
+    
+    # no -> dotnet new webapi -minimal -n SixMinApi 
+    
+    # no -> mkdir formating_code
     dotnet new console -lang c# -n formating_code -o .\formating_code -f net6.0
-    # 1 code
-    # 2 cd .\formating_code\
+    ls
+    
+    # cd .\formating_code\
     dotnet run
 
     cd ..
