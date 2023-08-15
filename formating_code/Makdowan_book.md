@@ -733,3 +733,72 @@ class CastExpr
 }
 
 ```
+
+## code_30
+
+```cs
+// Продемонстрировать применение оператора %.
+using System;
+
+class ModDemo
+{
+    static void Main()
+    {
+        int iresult, irem;
+        double dresult, drem;
+        iresult = 10 / 3;
+        irem = 10 % 3;
+        dresult = 10.0 / 3.0;
+        drem = 10.0 % 3.0;
+        Console.WriteLine("Результат и остаток от деления 10/3: " +
+        iresult + " " + irem);
+        Console.WriteLine("Результат и остаток от деления 10.0 / 3.0: " +
+        dresult + " " + drem);
+    }
+}
+
+```
+
+## code_31
+
+```cs
+// Продемонстрировать отличие между префиксной
+// и постфиксной формами оператора инкремента (++).
+using System;
+
+class PrePostDemo
+{
+    static void Main()
+    {
+        int x, y;
+        int i;
+        x = 1;
+        y = 0;
+        Console.WriteLine("Ряд чисел, полученных " +
+        "с помощью оператора у = у + х++;");
+        for (i = 0; i < 10; i++)
+        {
+            y = y + x++;  // постфиксная форма оператора ++
+            Console.WriteLine(y + " ");
+        }
+        Console.WriteLine();
+        x = 1;
+        y = 0;
+        Console.WriteLine("Ряд чисел, полученных " +
+        "с помощью оператора у = у+  ++х;");
+        for (i = 0; i < 10; i++)
+        {
+            y = y + ++x;  // префиксная форма оператора + +
+            Console.WriteLine(y + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+```
+
+## code_32
+
+```cs
+
+```
