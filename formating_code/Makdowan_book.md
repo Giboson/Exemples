@@ -989,3 +989,34 @@ class ShowBits
 }
 
 ```
+
+## code_39
+
+```cs
+// Применить поразрядный оператор ИЛИ, чтобы сделать число нечетным.
+using System;
+
+class MakeOdd
+{
+    static void Main()
+    {
+        ushort num;
+        ushort i;
+        for (i = 1; i <= 10; i++)
+        {
+            num = i;
+            Console.WriteLine("num: " + num);
+            num = (ushort)(num | 1);
+            Console.WriteLine("num после установки младшего разряда: " +
+            num + "\n");
+        }
+    }
+}
+
+```
+
+## code_40
+
+```cs
+
+```
