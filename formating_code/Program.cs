@@ -1,15 +1,17 @@
 ﻿// For all sources
 
 
-    // Продемонстрировать применение идентификатора со знаком @.
-    using System;
-    class IdTest 
+// Вычислить расстояние от Земли до Солнца в дюймах.
+using System;
+    class Inches 
     {
-    static void Main() 
-    {
-    int @if; // применение ключевого слова if
-    // в качестве идентификатора
-    for(@if = 0; @if < 10; @if++)
-    Console.WriteLine("@if равно " + @if);
-    }
+    static void Main() {
+        long inches;
+        long miles;
+        miles = 93000000; // 93 000 000 миль до Солнца
+    // 5 280 футов в миле, 12 дюймов в футе,
+        inches = miles * 5280 * 12;
+    Console.WriteLine("Расстояние до Солнца: " +
+        inches + " дюймов.");
+        }
     }

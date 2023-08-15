@@ -168,8 +168,10 @@ static void Main()
 ## code_8
 
 ```cs
+
     // Продемонстрировать применение идентификатора со знаком @.
     using System;
+
     class IdTest 
     {
     static void Main() 
@@ -187,16 +189,21 @@ static void Main()
 
 ```cs
 
-    Console.WriteLine("=> Data type parsing:"); 
-    bool b = bool.Parse("True");
-    Console.WriteLine("Value of b: {0} ", b); // Вывод значения b
-    double d = double.Parse(" 99. 884 ");
-    Console.WriteLine ("Value of d: {0} ", d); // Вывод значения d
-    int i = int.Parse( "8");
-    Console.WriteLine("Value of i: {0}", i); // Вывод значения i
-    char c = Char.Parse( "w" );
-    Console.WriteLine("Value of c: {0} ", c); // Вывод значения с
-    Console.WriteLine();
+    // Вычислить расстояние от Земли до Солнца в дюймах.
+    using System;
+
+    class Inches 
+    {
+    static void Main() {
+        long inches;
+        long miles;
+        miles = 93000000; // 93 000 000 миль до Солнца
+    // 5 280 футов в миле, 12 дюймов в футе,
+        inches = miles * 5280 * 12;
+    Console.WriteLine("Расстояние до Солнца: " +
+        inches + " дюймов.");
+        }
+    }
 
 ```
 
