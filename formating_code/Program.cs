@@ -1,20 +1,16 @@
 ﻿// For all sources
 
 
-    // Использовать тип byte.
+// Определить радиус окружности по площади круга.
     using System;
-    class Use_byte 
+    class FindRadius 
     {
     static void Main() 
     {
-    byte x;
-    int sum;
-    sum = 0;
-
-     for(x = 1; x <= 100; x++)
-
-    sum = sum + x;
-
-    Console.WriteLine("Сумма чисел от 1 до 100 равна " + sum);
-        }
+        Double r;
+        Double area;
+    area = 10.0;
+        r = Math.Sqrt(area / 3.1416);
+    Console.WriteLine("Радиус равен " + r);
+    }
     }
