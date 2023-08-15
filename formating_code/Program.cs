@@ -1,17 +1,20 @@
 ﻿// For all sources
 
 
-// Вычислить расстояние от Земли до Солнца в дюймах.
-using System;
-    class Inches 
+    // Использовать тип byte.
+    using System;
+    class Use_byte 
     {
-    static void Main() {
-        long inches;
-        long miles;
-        miles = 93000000; // 93 000 000 миль до Солнца
-    // 5 280 футов в миле, 12 дюймов в футе,
-        inches = miles * 5280 * 12;
-    Console.WriteLine("Расстояние до Солнца: " +
-        inches + " дюймов.");
+    static void Main() 
+    {
+    byte x;
+    int sum;
+    sum = 0;
+
+     for(x = 1; x <= 100; x++)
+
+    sum = sum + x;
+
+    Console.WriteLine("Сумма чисел от 1 до 100 равна " + sum);
         }
     }

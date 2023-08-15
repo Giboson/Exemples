@@ -26,8 +26,10 @@
     // Эта программа демонстрирует применение переменных.
     using System;
 
-    class Example2 {
-    static void Main() {
+    class Example2 
+    {
+    static void Main() 
+    {
     int x; // здесь объявляется переменная
     int y; // здесь объявляется еще одна переменная
     x = 100; // здесь переменной х присваивается значение 100
@@ -47,6 +49,7 @@
     * между типами данных int и double.
 */
     using System;
+
     class Example3 
     {
     static void Main() 
@@ -72,10 +75,11 @@
 
 ```cs
 // Продемонстрировать применение условного оператора if.
-using System;
-class IfDemo 
+    using System;
+
+    class IfDemo 
     {
-static void Main() 
+    static void Main() 
     {
     int a, b, c;
     a = 2;
@@ -96,6 +100,7 @@ static void Main()
 
     }
 }
+
 ```
 
 ## code_5
@@ -103,6 +108,7 @@ static void Main()
 ```cs
     // Продемонстрировать применение оператора цикла for.
     using System;
+
     class ForDemo
     {
     static void Main() 
@@ -121,10 +127,10 @@ static void Main()
 
 ```cs
 // Продемонстрировать применение кодового блока.
-using System;
-class BlockDemo 
+    using System;
+    class BlockDemo 
     {
-static void Main() 
+    static void Main() 
     {
     int i, j, d;
     i = 5 ;
@@ -144,10 +150,12 @@ static void Main()
 
 ```cs
 // Вычислить сумму и произведение чисел от 1 до 10.
-using System;
-class ProdSum {
-static void Main() 
-{
+    using System;
+
+    class ProdSum 
+    {
+    static void Main() 
+    {
     int prod;
     int sum;
     int i;
@@ -194,7 +202,8 @@ static void Main()
 
     class Inches 
     {
-    static void Main() {
+    static void Main() 
+    {
         long inches;
         long miles;
         miles = 93000000; // 93 000 000 миль до Солнца
@@ -202,7 +211,7 @@ static void Main()
         inches = miles * 5280 * 12;
     Console.WriteLine("Расстояние до Солнца: " +
         inches + " дюймов.");
-        }
+    }
     }
 
 ```
@@ -210,22 +219,23 @@ static void Main()
 ## code_10
 
 ```cs
-    Console.WriteLine ("=> Data type parsing with TryParse:"); 
-        if (bool.TryParse("True", out bool b));
-        {
-        Console.WriteLine("Value of b: {0}", b);  // Вывод значения b
+        // Использовать тип byte.
+    using System;
+    class Use_byte 
+    {
+    static void Main() 
+    {
+    byte x;
+    int sum;
+    sum = 0;
+
+     for(x = 1; x <= 100; x++)
+
+    sum = sum + x;
+
+    Console.WriteLine("Сумма чисел от 1 до 100 равна " + sum);
         }
-        string value = "Hello";
-        if (double.TryParse(value, out double d))
-        {
-        Console.WriteLine("Value of d: {0}", d) ;  // Вывод значения d
-        }
-        else
-        {
-        // Преобразование потерпело неудачу
-        Console.WriteLine("Failed to convert the input ({0}) to a double",value);
-        }
-        Console.WriteLine();
+    }
 
 ```
 
