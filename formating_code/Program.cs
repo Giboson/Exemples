@@ -1,20 +1,21 @@
 ﻿// For all sources
 
-// Продемонстрировать применение кодового блока.
+// Вычислить сумму и произведение чисел от 1 до 10.
 using System;
-class BlockDemo 
-    {
+class ProdSum {
 static void Main() 
+{
+    int prod;
+    int sum;
+    int i;
+    sum = 0;
+    prod = 1;
+    for(i=1; i <= 10; i++)  
     {
-    int i, j, d;
-    i = 5 ;
-    j = 10;
-    // Адресатом этого оператора if служит кодовый блок.
-    if(i != 0) {
-    Console.WriteLine("i не равно нулю");
-    d = j / i;
-    Console.WriteLine("j / i равно " + d);
+    sum = sum + i;
+    prod = prod * i;
+    }
+    Console.WriteLine("Сумма равна " + sum);
+    Console.WriteLine("Произведение равно " + prod);
     }
     }
-    }
-
