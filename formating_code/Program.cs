@@ -1,23 +1,19 @@
 ﻿// For all sources
 
 
-// Продемонстрировать применение тригонометрических функций.
+// Использовать тип decimal для расчета скидки.
     using System;
-    class Trigonometry 
+    class UseDecimal 
     {
     static void Main() 
     {
-    Double theta; // угол в радианах
-        for(theta = 0.1; theta <= 1.0;
-        theta = theta +0.1)  
-    {
-    Console.WriteLine("Синус угла " + theta +
-    " равен " + Math.Sin(theta));
-    Console.WriteLine("Косинус угла " + theta +
-    " равен " + Math.Cos(theta));
-    Console.WriteLine("Тангенс угла " + theta +
-    " равен " + Math.Tan(theta));
-    Console.WriteLine();
-    }
+    decimal price;
+    decimal discount;
+    decimal discounted_price;
+    // Рассчитать цену со скидкой.
+    price = 19.95m;
+    discount = 0.15m; // норма скидки составляет 15%
+    discounted_price = price - ( price * discount);
+    Console.WriteLine("Цена со скидкой: RUB " + discounted_price);
     }
     }
