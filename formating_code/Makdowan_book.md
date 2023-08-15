@@ -513,6 +513,7 @@
 ```cs
         // Продемонстрировать область действия кодового блока.
     using System;
+    
     class ScopeDemo
      {
     static void Main()
@@ -535,6 +536,22 @@
 ## code_23
 
 ```cs
+    // Продемонстрировать время существования переменной.
+    using System;
 
+    class VarInitDemo 
+    {
+    static void Main() 
+    {
+    int x;
+    for(x = 0; x < 3; x++) 
+    {
+    int у = -1; // Переменная у инициализируется при каждом входе в блок.
+    Console.WriteLine("у равно: " + у); // Здесь всегда выводится -1
+    у = 100;
+    Console.WriteLine("у теперь равно: " + у);
+    }
+    }
+    }
 
 ```
