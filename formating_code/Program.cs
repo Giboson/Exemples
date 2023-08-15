@@ -1,16 +1,20 @@
 ﻿// For all sources
 
 
-    // Применить команды форматирования.
+// Использовать спецификатор формата С для вывода
+// результата в местной валюте.
     using System;
-    class DisplayOptions 
+    class UseDecimal 
     {
     static void Main() 
     {
-    int i;
-    Console.WriteLine("Число\tКвадрат\tКуб");
-    for(i = 1; i < 10; i++)
-    Console.WriteLine("{0}\t{1}\t{2}", i, i*i, i*i*i);
+        decimal price;
+        decimal discount;
+        decimal discounted_price;
+    // рассчитать цену со скидкой,
+    price = 19.95m;
+    discount = 0.15m; // норма скидки составляет 15%
+    discounted_price = price - ( price * discount);
+    Console.WriteLine("Цена со скидкой: {0:C}", discounted_price);
     }
-    
     }

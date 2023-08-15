@@ -381,7 +381,7 @@
         int i;
         Console.WriteLine("Число\tКвадрат\tКуб");
         for(i = 1; i < 10; i++)
-        
+
     Console.WriteLine("{0}\t{1}\t{2}", i, i*i, i*i*i);
     }
     
@@ -392,17 +392,22 @@
 ## code_17
 
 ```cs
+    // Использовать спецификатор формата С для вывода
+    // результата в местной валюте.
     using System;
-
-    Console.WriteLine("**** Fun With type conversions ****");
-    // Сложить две переменные типа short и вывести результат.
-    short numb1 = 9, numb2 = 10;
-    Console.WriteLine("{0} + {1} = {2}", numb1, numb2, Add(numb1, numb2));
-
-    Console.ReadLine();
-    static int Add(int x, int y)
+    class UseDecimal 
     {
-        return x + y;
+    static void Main() 
+    {
+        decimal price;
+        decimal discount;
+        decimal discounted_price;
+    // рассчитать цену со скидкой,
+    price = 19.95m;
+    discount = 0.15m; // норма скидки составляет 15%
+    discounted_price = price - ( price * discount);
+    Console.WriteLine("Цена со скидкой: {0:C}", discounted_price);
+    }
     }
 
 ```
