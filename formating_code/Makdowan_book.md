@@ -1644,3 +1644,220 @@ class Power
     }
 }
 ```
+
+## code_63
+
+```cs
+// Отобразить цифры целого числа в обратном порядке.
+using System;
+
+class DoWhileDemo
+{
+    static void Main()
+    {
+        int num;
+        int nextdigit;
+        num = 198;
+        Console.WriteLine("Число: " + num);
+        Console.Write("Число в обратном порядке: ");
+        do
+        {
+            nextdigit = num % 10;
+            Console.Write(nextdigit);
+            num = num / 10;
+        } while (num > 0);
+        Console.WriteLine();
+    }
+}
+
+```
+
+## code_64
+
+```cs
+// Применить оператор break для выхода из цикла.
+using System;
+
+class BreakDemo
+{
+    static void Main()
+    {
+        // Использовать оператор break для выхода из этого цикла.
+        for (int i = -10; i <= 10; i++)
+        {
+            if (i > 0) break; // завершить цикл, как только значение
+                              // переменной i станет положительным
+            Console.Write(i + " ");
+        }
+        Console.WriteLine("Готово!");
+    }
+}
+
+```
+
+## code_65
+
+```cs
+// Применить оператор break для выхода из цикла do-while.
+using System;
+
+class BreakDemo2
+{
+    static void Main()
+    {
+        int i;
+        i = -10;
+        do
+        {
+            if (i > 0) break;
+            Console.Write(i + " ");
+            i++;
+        } while (i <= 10);
+        Console.WriteLine("Готово!");
+    }
+}
+
+```
+
+## code_66
+
+```cs
+// Выявить наименьший множитель числа.
+using System;
+
+class FindSmallestFactor
+{
+    static void Main()
+    {
+        int factor = 1;
+        int num = -1000;
+        for (int i = 2; i <= num / i;  i++) {
+        if ((num % i) == 0)
+            {
+                factor = i;
+                break; // прервать цикл, как только будет
+                       // выявлен наименьший множитель числа
+            }
+    }
+    Console.WriteLine("Наименьший множитель равен " + factor);
+}
+}
+
+```
+
+## code_67
+
+```cs
+// Применить оператор break во вложенных циклах.
+using System;
+
+class BreakNested
+{
+    static void Main()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine("Подсчет во внешнем цикле: " + i);
+            Console.Write(" Подсчет во внутреннем цикле: ");
+            int t = 0;
+            while (t < 100)
+            {
+                if (t == 10) break; // прервать цикл, если t равно 10
+                Console.Write(t + " ");
+                t++;
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("Циклы завершены.");
+    }
+}
+
+```
+
+## code_68
+
+```cs
+// Применить оператор continue.
+using System;
+
+class ContDemo
+{
+    static void Main()
+    {
+        // вывести четные числа от 0 до 100.
+        for (int i = 0; i <= 100; i++)
+        {
+            if ((i % 2) != 0) continue; // перейти к следующему шагу итерации
+            Console.WriteLine(i);
+        }
+    }
+}
+
+```
+
+## code_69
+
+```cs
+// Применить оператор goto в операторе switch.
+using System;
+
+class SwitchGoto
+{
+    static void Main()
+    {
+        for (int i = 1; i < 5; i++)
+        {
+            switch (i)
+            {
+                case 1:
+
+                    Console.WriteLine("В ветви case 1");
+                    goto case 3;
+                case 2:
+                    Console.WriteLine("В ветви case 2");
+                    goto case 1;
+                case 3:
+                    Console.WriteLine("В ветви case 3");
+                    goto default;
+                default:
+                    Console.WriteLine("В ветви default");
+                    break;
+            }
+            Console.WriteLine();
+        }
+        // goto case 1; // Ошибка! Безусловный переход к оператору switch недопустим.
+    }
+}
+
+```
+
+## code_70
+
+```cs
+// Продемонстрировать практическое применение оператора goto.
+using System;
+
+class Use_goto
+{
+    static void Main()
+    {
+        int i = 0, j = 0, k = 0;
+        for (i = 0; i < 10; i++)
+        {
+            for (j = 0; j < 10; j++)
+            {
+                for (k = 0; k < 10; k++)
+                {
+                    Console.WriteLine("i, j, k: " + i + " " + j +
+                    " " + k);
+                    if (k == 3) goto stop;
+                }
+            }
+        }
+    stop:
+        Console.WriteLine("Остановлено! i, j, k: " + i +
+        ", " + j + " " + k);
+    }
+}
+
+```
