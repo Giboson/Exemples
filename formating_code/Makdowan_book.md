@@ -1225,6 +1225,7 @@ class PosNeg
 // Определить, является ли числовое значение
 // положительным, отрицательным или нулевым.
 using System;
+
 class PosNegZero
 {
     static void Main()
@@ -1237,6 +1238,243 @@ class PosNegZero
             else if (i == 0) Console.WriteLine("число без знака");
             else Console.WriteLine("положительное число");
         }
+    }
+}
+
+```
+
+## code_48
+
+```cs
+    // Определить наименьший множитель заданного
+    // целого значения, состоящий из одной цифры.
+using System;
+
+class Ladder
+{
+    static void Main()
+    {
+        int num;
+        for (num = 2; num < 12; num++)
+        {
+            if ((num % 2) == 0)
+                Console.WriteLine("Наименьший множитель числа " + num + " равен 2.");
+            else if ((num % 3) == 0)
+                Console.WriteLine("Наименьший множитель числа " + num + " равен 3.");
+            else if ((num % 5) == 0)
+                Console.WriteLine("Наименьший множитель числа " + num + " равен 5.");
+            else if ((num % 7) == 0)
+                Console.WriteLine("Наименьший множитель числа " + num + " равен 7.");
+            else
+                Console.WriteLine(num + " не делится на 2, 3, 5 или 7.");
+        }
+    }
+}
+
+```
+
+## code_49
+
+```cs
+    // Продемонстрировать применение оператора switch.
+using System;
+
+class SwitchDemo
+{
+    static void Main()
+    {
+        int i;
+        for (i = 0; i < 10; i++)
+            switch (i)
+            {
+                case 0:
+                    Console.WriteLine("i равно нулю");
+                    break;
+                case 1:
+                    Console.WriteLine("i равно единице");
+                    break;
+                case 2:
+                    Console.WriteLine("i равно двум");
+                    break;
+                case 3:
+                    Console.WriteLine("i равно трем");
+                    break;
+                case 4:
+                    Console.WriteLine("i равно четырем");
+                    break;
+                default:
+                    Console.WriteLine("i равно или больше пяти");
+                    break;
+            }
+    }
+}
+
+```
+
+## code_50
+
+```cs
+// Использовать элементы типа char для управления оператором switch.
+using System;
+
+class SwitchDemo2
+{
+    static void Main()
+    {
+        char ch;
+        for (ch = 'A'; ch <= 'E'; ch++)
+            switch (ch)
+            {
+                case 'A':
+                    Console.WriteLine("ch содержит A");
+                    break;
+                case 'B':
+                    Console.WriteLine("ch содержит B");
+                    break;
+                case 'C':
+                    Console.WriteLine("ch содержит C");
+                    break;
+                case 'D':
+                    Console.WriteLine("ch содержит D");
+                    break;
+                case 'E':
+                    Console.WriteLine("ch содержит E");
+                    break;
+            }
+    }
+}
+
+```
+
+## code_51
+
+```cs
+    // Пример "проваливания" пустых ветвей case.
+using System;
+
+class EmptyCasesCanFall
+{
+    static void Main()
+    {
+        int i;
+        for (i = 1; i < 5; i++)
+            switch (i)
+            {
+                case 1:
+                case 2:
+                case 3:
+                    Console.WriteLine("i равно 1, 2 или 3");
+                    break;
+                case 4:
+                    Console.WriteLine("i равно 4");
+                    break;
+            }
+    }
+}
+
+```
+
+## code_52
+
+```cs
+// Выполнение цикла for в отрицательном направлении.
+using System;
+
+class DecrFor
+{
+    static void Main()
+    {
+        int x;
+        for (x = 100; x > -100; x -= 5)
+            Console.WriteLine(x);
+    }
+}
+
+```
+
+## code_53
+
+```cs
+    // Выяснить, является ли число простым. Если оно
+// непростое, вывести наибольший его множитель.
+using System;
+
+class FindPrimes
+{
+    static void Main()
+    {
+        int num;
+        int i;
+        int factor;
+        bool isprime;
+        for (num = 2; num < 20; num++)
+        {
+            isprime = true;
+            factor = 0;
+            // Выяснить, делится ли значение переменной num нацело.
+            for (i = 2; i <= num / 2; i++)
+            {
+                if ((num % i) == 0)
+                {
+                    // Значение переменной num делится нацело.
+                    // Следовательно, это непростое число.
+                    isprime = false;
+                    factor = i;
+                }
+            }
+            if (isprime)
+                Console.WriteLine(num + " — простое число.");
+            else
+                Console.WriteLine("Наибольший множитель числа " + num +
+                " равен " + factor);
+        }
+    }
+}
+```
+
+## code_54
+
+```cs
+    // Использовать запятые в операторе цикла for.
+using System;
+
+class Comma
+{
+    static void Main()
+    {
+        int i, j;
+        for (i = 0, j = 10; i < j; i++, j--)
+            Console.WriteLine("i и j: " + i + " " + j);
+    }
+}
+
+```
+
+## code_55
+
+```cs
+    // Использовать запятые в операторе цикла for для
+// выявления наименьшего и наибольшего множителя числа.
+using System;
+
+class Comma
+{
+    static void Main()
+    {
+        int i, j;
+        int smallest, largest;
+        int num;
+        num = 100;
+        smallest = largest = 1;
+        for (i = 2, j = num / 2; (i <= num / 2) & (j >= 2); i++, j--)
+        {
+            if ((smallest == 1) & ((num % i) == 0))
+                smallest = i;
+            if ((largest == 1) & ((num % j) == 0))
+                largest = j;
+        }
+        Console.WriteLine("Наибольший множитель: " + largest);
+        Console.WriteLine("Наименьший множитель: " + smallest);
     }
 }
 
