@@ -1946,3 +1946,502 @@ class BuildingDemo
 }
 
 ```
+
+## code_73
+
+```cs
+// Добавить метод в класс Building.
+using System;
+
+class Building
+{
+    public int Floors;    //  количество этажей
+    public int Area; //  общая площадь здания
+    public int Occupants; // к оличество жильцов
+                          // Вывести площадьн а одного человека,
+    public void AreaPerPerson()
+    {
+        Console.WriteLine(" " + Area / Occupants +
+        " приходится на одного человека");
+    }
+}
+// Использовать метод AreaPerPerson().
+class BuildingDemo
+{
+    static void Main()
+    {
+        Building house = new Building();
+        Building office = new Building();
+        // Присвоить значения полям в объекте house.
+        house.Occupants = 4;
+        house.Area = 2500;
+        house.Floors = 2;
+        // Присвоить значения полям в объекте office.
+        office.Occupants = 25;
+        office.Area = 4200;
+        office.Floors = 3;
+        Console.WriteLine("Дом имеет:\n" +
+        house.Floors + " этажа\n " +
+        house.Occupants + " жильца\n " +
+        house.Area +
+        "кв. метров общей площади, из них");
+        house.AreaPerPerson();
+        Console.WriteLine();
+        Console.WriteLine("Учреждение имеет:\n " +
+        office.Floors + " этажа\n " +
+        office.Occupants + " работников\n " +
+        office.Area +
+        " кв. метров общей площади, из них");
+        office.AreaPerPerson();
+    }
+}
+
+```
+
+## code_74
+
+```cs
+// Возвратить значение из метода AreaPerPerson().
+using System;
+
+class Building
+{
+    public int Floors;    // количество этажей
+    public int Area; // общая площадь здания
+    public int Occupants; // количество жильцов
+                          // Возвратить величину площади на одного человека,
+    public int AreaPerPerson()
+    {
+        return Area / Occupants;
+    }
+}
+// Использовать значение, возвращаемое методом AreaPerPerson!).
+class BuildingDemo
+{
+    static void Main()
+    {
+        Building house = new Building();
+        Building office = new Building();
+        int areaPP; // площадь на одного человека
+                    // Присвоить значения полям в объекте house.
+        house.Occupants = 4;
+        house.Area = 2500;
+        house.Floors = 2;
+        // Присвоить значения полям в объекте office.
+        office.Occupants = 25;
+        office.Area = 4200;
+        office.Floors = 3;
+        // Получить площадь на одного человека в жилом доме.
+        areaPP = house.AreaPerPerson();
+        Console.WriteLine("Дом имеет:\n " +
+        house.Floors + " этажа\n " +
+        house.Occupants + " жильца\n " +
+        house.Area +
+        " кв. метров общей площади, из них\n " +
+        areaPP + " приходится на одного человека");
+        Console.WriteLine();
+        // Получить площадь на одного человека в учреждении.
+        areaPP = office.AreaPerPerson();
+        Console.WriteLine("Учреждение имеет:\n " +
+        office.Floors + " этажа\n " +
+        office.Occupants + " работников\n " +
+        office.Area +
+        " кв. метров общей площади, из них\n " +
+        areaPP + " приходится на одного человека");
+    }
+}
+
+```
+
+## code_75
+
+```cs
+// Простой пример применения параметра.
+using System;
+
+class ChkNum
+{
+    // Возвратить значение true, если значение
+    // параметра х окажется простым числом.
+    public bool IsPrime(int x)
+    {
+        if (x <= 1) return false;
+    for (int i = 2; i <= x / i; i++)
+            if ((x % i) == 0) return false;
+        return true;
+    }
+}
+class ParmDemo
+{
+    static void Main()
+    {
+        ChkNum ob = new ChkNum();
+        for (int i = 2; i < 10; i++)
+            if (ob.IsPrime(i)) Console.WriteLine(i + " простое число.");
+            else Console.WriteLine(i + " непростое число.");
+    }
+}
+
+```
+
+## code_76
+
+```cs
+
+// Добавить метод, принимающий два аргумента.
+using System;
+
+class ChkNum
+{
+    // Возвратить значение true, если значение
+    // параметра х окажется простым числом.
+    public bool IsPrime(int x)
+    {
+        if (x <= 1) return false;
+        for (int i = 2; i <= x / i; i++)
+            if ((x % i) == 0) return false;
+        return true;
+    }
+    // Возвратить наименьший общий множитель.
+    public int LeastComFactor(int a, int b)
+    {
+        int max;
+        if (IsPrime(a) || IsPrime(b)) return 1;
+        max = a < b ? a : b;
+        for (int i = 2; i <= max / 2; i++)
+            if (((a % i) == 0) && ((b % i) == 0)) return i;
+        return 1;
+    }
+}
+class ParmDemo
+{
+    static void Main()
+    {
+        ChkNum ob = new ChkNum();
+        int a, b;
+        for (int i = 2; i < 10; i++)
+            if (ob.IsPrime(i)) Console.WriteLine(i + " простое число.");
+            else Console.WriteLine(i + " непростое число.");
+        a = 7;
+        b = 8;
+        Console.WriteLine("Наименьший общий множитель чисел " +
+        a + " и " + b + " равен " +
+        ob.LeastComFactor(a, b));
+        a = 100;
+        b = 8;
+        Console.WriteLine("Наименьший общий множитель чисел " +
+        a + " и " + b + " равен " +
+        ob.LeastComFactor(a, b));
+        a = 100;
+        b = 75;
+        Console.WriteLine("Наименьший общий множитель чисел " +
+        a + " и " + b + " равен " +
+        ob.LeastComFactor(a, b));
+    }
+}
+
+```
+
+## code_77
+
+```cs
+/*
+Добавить параметризированный метод, вычисляющий
+максимальное количество человек, которые могут
+занимать здание, исходя из заданной минимальной
+площади на одного человека.
+*/
+using System;
+
+class Building
+{
+    public int Floors;    // количество этажей
+    public int Area; // общая площадь здания
+    public int Occupants;  // количество жильцов
+                           // Возвратить площадьн а одного человека.
+    public int AreaPerPerson()
+    {
+        return Area / Occupants;
+    }
+    // Возвратить максимальное количество человек, занимающих здание,
+    // исходя из заданной минимальной площади на одного человека.
+    public int MaxOccupant(int minArea)
+    {
+        return Area / minArea;
+    }
+}
+// Использовать метод MaxOccupant().
+class BuildingDemo
+{
+    static void Main()
+    {
+        Building house = new Building();
+        Building office = new Building();
+        // Присвоить значения полям в объекте house.
+        house.Occupants = 4;
+        house.Area = 2500;
+        house.Floors = 2;
+        // Присвоить значения полям в объекте office.
+        office.Occupants = 25;
+        office.Area = 4200;
+        office.Floors = 3;
+        Console.WriteLine("Максимальное количество человек в доме, \n" +
+        "если на каждого должно приходиться " +
+        300 + " кв. метров: " +
+        house.MaxOccupant(300));
+        Console.WriteLine("Максимальное количество человек " +
+        "в учреждении, \n" +
+        "если на каждого должно приходиться " +
+        300 + " кв. метров: " +
+        office.MaxOccupant(300));
+    }
+}
+```
+
+## code_78
+
+```cs
+    // Простой конструктор.
+using System;
+
+class MyClass
+{
+    public int x;
+    public MyClass()
+    {
+        x = 10;
+    }
+}
+class ConsDemo
+{
+    static void Main()
+    {
+        MyClass t1 = new MyClass();
+        MyClass t2 = new MyClass();
+        Console.WriteLine(t1.x + " " + t2.x);
+    }
+}
+
+```
+
+## code_79
+
+```cs
+// Параметризированный конструктор.
+using System;
+
+class MyClass
+{
+    public int x;
+    public MyClass(int i)
+    {
+        x = i;
+    }
+}
+class ParmConsDemo
+{
+    static void Main()
+    {
+        MyClass t1 = new MyClass(10);
+        MyClass t2 = new MyClass(88);
+        Console.WriteLine(t1.x + " " + t2.x);
+    }
+}
+```
+
+## code_80
+
+```cs
+// Добавить конструктор в класс Building.
+using System;
+
+class Building
+{
+    public int Floors; // количество этажей
+    public int Area; // общая площадь здания
+    public int Occupants; // количество жильцов
+                          // Параметризированный конструктор для класса Building.
+    public Building(int f, int a, int o)
+    {
+        Floors = f;
+        Area = a;
+        Occupants = o;
+    }
+    // Возвратить площадь на одного человека.
+    public int AreaPerPerson()
+    {
+        return Area / Occupants;
+    }
+    // Возвратить максимальное количество человек, занимающих здание,
+    // исходя из заданной минимальной площади на одного человека.
+    public int MaxOccupant(int minArea)
+    {
+        return Area / minArea;
+    }
+}
+// Использовать параметризированный конструктор класса Building.
+class BuildingDemo
+{
+    static void Main()
+    {
+        Building house = new Building(2, 2500, 4);
+        Building office = new Building(3, 4200, 25);
+        Console.WriteLine("Максимальное количество человек в доме, \n" +
+        "если на каждого должно приходиться " +
+        300 +" кв. метров: " +
+        house.MaxOccupant(300));
+        Console.WriteLine("Максимальное количество человек " +
+        "в учреждении, \n" +
+        "если на каждого должно приходиться " +
+        300 + " кв. метров: " +
+        office.MaxOccupant(300));
+    }
+}
+
+```
+
+## code_81
+
+```cs
+// Использовать оператор new вместе с типом значения.
+using System;
+
+class newValue
+{
+    static void Main()
+    {
+        int i = new int(); // инициализировать переменную i нулевым значением
+        Console.WriteLine("Значение переменной i равно: " + i);
+    }
+}
+
+```
+
+## code_82
+
+```cs
+// Продемонстрировать применение деструктора.
+using System;
+
+class Destruct
+{
+    public int x;
+    public Destruct(int i)
+    {
+        x = i;
+    }
+    // Вызывается при утилизации объекта.
+    ~Destruct()
+    {
+        Console.WriteLine("Уничтожить " + x);
+    }
+    // Создает объект и тут же уничтожает его.
+    public void Generator(int i)
+    {
+        Destruct о = new Destruct(i);
+    }
+}
+class DestructDemo
+{
+    static void Main()
+    {
+        int count;
+        Destruct ob = new Destruct(0);
+        /* А теперь создать большое число объектов.
+        В какой-то момент произойдет "сборка мусора".
+        Примечание: для того чтобы активизировать
+        "сборку мусора", возможно, придется увеличить
+        число создаваемых объектов. */
+        for (count = 1; count < 100000; count++)
+            ob.Generator(count);
+        Console.WriteLine("Готово!");
+    }
+}
+
+```
+
+## code_83
+
+```cs
+using System;
+
+class Rect
+{
+    public int Width;
+    public int Height;
+    public Rect(int w, int h)
+    {
+        Width = w;
+        Height = h;
+    }
+    public int Area()
+    {
+        return Width * Height;
+    }
+}
+class UseRect
+{
+    static void Main()
+    {
+        Rect r1 = new Rect(4, 5);
+        Rect r2 = new Rect(7, 9);
+        Console.WriteLine("Площадь прямоугольника r1: " + r1.Area());
+        Console.WriteLine("Площадь прямоугольника r2: " + r2.Area());
+    }
+}
+
+```
+
+## code_84
+
+```cs
+using System;
+
+class Rect
+{
+    public int Width;
+    public int Height;
+    public Rect(int w, int h)
+    {
+        this.Width = w;
+        this.Height = h;
+    }
+    public int Area()
+    {
+        return this.Width * this.Height;
+    }
+}
+class UseRect
+{
+    static void Main()
+    {
+        Rect r1 = new Rect(4, 5);
+        Rect r2 = new Rect(7, 9);
+        Console.WriteLine("Площадь прямоугольника r1: " + r1.Area());
+        Console.WriteLine("Площадь прямоугольника r2: " + r2.Area());
+    }
+}
+
+```
+
+## code_85
+
+```cs
+    
+// Продемонстрировать одномерный массив.
+using System;
+
+class ArrayDemo
+{
+    static void Main()
+    {
+        int[] sample = new int[10];
+        int i;
+        for (i = 0; i < 10; i = i + 1)
+            sample[i] = i;
+        for (i = 0; i < 10; i = i + 1)
+            Console.WriteLine("sample[" + i + "]: " + sample[i]);
+    }
+}
+
+```
