@@ -1479,3 +1479,168 @@ class Comma
 }
 
 ```
+
+## code_56
+
+```cs
+
+// Условием выполнения цикла может служить любое выражение типа bool.
+using System;
+
+class forDemo
+{
+    static void Main()
+    {
+        int i, j;
+        bool done = false;
+        for (i = 0, j = 100; !done; i++, j--)
+        {
+            if (i * i >= j) done = true;
+            Console.WriteLine("i, j: " + i + " " + j);
+        }
+    }
+}
+```
+
+## code_57
+
+```cs
+    // Отдельные части цикла for могут оставаться пустыми.
+using System;
+
+class Empty
+{
+    static void Main()
+    {
+        int i;
+        for (i = 0; i < 10;)
+        {
+            Console.WriteLine("Проход №" + i);
+            i++; // инкрементировать переменную управления циклом
+        }
+    }
+}
+
+```
+
+## code_58
+
+```cs
+    // Исключить еще одну часть из определения цикла for.
+using System;
+
+class Empty2
+{
+    static void Main()
+    {
+        int i;
+        i = 0; // исключить инициализацию из определения цикла
+        for (; i < 10;)
+        {
+            Console.WriteLine("Проход №" + i);
+            i++; // инкрементировать переменную управления циклом
+        }
+    }
+}
+
+```
+
+## code_59
+
+```cs
+// Тело цикла может быть пустым.
+using System;
+
+class Empty3
+{
+    static void Main()
+    {
+        int i;
+        int sum = 0;
+        // получить сумму чисел от 1 до 5
+        for (i = 1; i <= 5; sum += i++) ;
+        Console.WriteLine("Сумма равна " + sum);
+    }
+}
+
+```
+
+## code_60
+
+```cs
+// Объявить переменную управления циклом в самом цикле for.
+using System;
+
+class ForVar
+{
+    static void Main()
+    {
+        int sum = 0;
+        int fact = 1;
+        // вычислить факториал чисел от 1 до 5
+        for (int i = 1; i <= 5; i++)
+        {
+            sum += i; // Переменная i действует в цикле.
+            fact *= i;
+        }
+        // А здесь переменная i недоступна.
+        Console.WriteLine("Сумма равна " + sum);
+        Console.WriteLine("Факториал равен " + fact);
+    }
+}
+
+```
+
+## code_61
+
+```cs
+// Вычислить порядок величины целого числа.
+using System;
+
+class WhileDemo
+{
+    static void Main()
+    {
+        int num;
+        int mag;
+        num = 435679;
+        mag = 0;
+        Console.WriteLine("Число: " + num);
+        while (num > 0)
+        {
+            mag++;
+            num = num / 10;
+        };
+        Console.WriteLine("Порядок величины: " + mag);
+    }
+}
+
+
+```
+
+## code_62
+
+```cs
+// Вычислить целые степени числа 2.
+using System;
+
+class Power
+{
+    static void Main()
+    {
+        int e;
+        int result;
+        for (int i = 0; i < 10; i++)
+        {
+            result = 1;
+            e = i;
+            while (e > 0)
+            {
+                result *= 2;
+                e--;
+            }
+            Console.WriteLine("2 в степени " + i + " равно " + result);
+        }
+    }
+}
+```
