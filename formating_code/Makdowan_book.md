@@ -2445,3 +2445,500 @@ class ArrayDemo
 }
 
 ```
+
+## code_86
+
+```cs
+// Вычислить среднее арифметическое ряда значений.
+using System;
+
+class Average
+{
+    static void Main()
+    {
+        int[] nums = new int[10];
+        int avg = 0;
+        nums[0] = 99;
+        nums[1] = 10;
+        nums[2] = 100;
+        nums[3] = 18;
+        nums[4] = 78;
+        nums[5] = 23;
+        nums[6] = 63;
+        nums[7] = 9;
+        nums[8] = 87;
+        nums[9] = 49;
+        for (int i = 0; i < 10; i++)
+            avg = avg + nums[i];
+        avg = avg / 10;
+        Console.WriteLine("Среднее: " + avg);
+    }
+}
+
+```
+
+## code_87
+
+```cs
+// Вычислить среднее арифметическое ряда значений.
+using System;
+
+class Average
+{
+    static void Main()
+    {
+        int[] nums = { 99, 10, 100, 18, 78, 23,
+63, 9, 87, 49 };
+        int avg = 0;
+        for (int i = 0; i < 10; i++)
+            avg = avg + nums[i];
+        avg = avg / 10;
+        Console.WriteLine("Среднее: " + avg);
+    }
+}
+
+```
+
+## code_88
+
+```cs
+// Продемонстрировать двумерный массив.
+using System;
+
+class TwoD
+{
+    static void Main()
+    {
+        int t, i;
+        int[,] table = new int[3, 4];
+        for (t = 0; t < 3; ++t)
+        {
+            for (i = 0; i < 4; ++i)
+            {
+                table[t, i] = (t * 4) + i + 1;
+                Console.Write(table[t, i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+```
+
+## code_89
+
+```cs
+// Суммировать значения по одной из диагоналей матрицы 3Ч3Ч3.
+using System;
+
+class ThreeDMatrix
+{
+    static void Main()
+    {
+        int[,,] m = new int[3, 3, 3];
+        int sum = 0;
+        int n = 1;
+        for (int x = 0; x < 3; x++)
+            for (int y = 0; y < 3; y++)
+                for (int z = 0; z < 3; z++)
+                    m[x, y, z] = n++;
+        sum = m[0, 0, 0] + m[1, 1, 1] + m[2, 2, 2];
+        Console.WriteLine("Сумма значений по первой диагонали: " + sum);
+    }
+}
+
+```
+
+## code_90
+
+```cs
+// Инициализировать двумерный массив.
+using System;
+
+class Squares
+{
+    static void Main()
+    {
+        int[,] sqrs = {
+            { 1, 1 },
+            { 2, 4 },
+            { 3, 9 },
+            { 4, 16 },
+            { 5, 25 },
+            { 6, 36 },
+            { 7, 49 },
+            { 8, 64 },
+            { 9, 81 },
+            { 10, 100 }};
+        int i, j;
+        for (i = 0; i < 10; i++)
+        {
+            for (j = 0; j < 2; j++)
+                Console.Write(sqrs[i, j] + " ");
+            Console.WriteLine();
+        }
+    }
+}
+
+```
+
+## code_91
+
+```cs
+// Продемонстрировать применение ступенчатых массивов.
+using System;
+
+class Jagged
+{
+    static void Main()
+    {
+        int[][] jagged = new int[3][];
+        jagged[0] = new int[4];
+        jagged[1] = new int[3];
+        jagged[2] = new int[5];
+        int i;
+        // Сохранить значения в первом массиве.
+        for (i = 0; i < 4; i++)
+            jagged[0][i] = i;
+        // Сохранить значения во втором массиве.
+        for (i = 0; i < 3; i++)
+            jagged[1][i] = i;
+        // Сохранить значения в третьем массиве.
+        for (i = 0; i < 5; i++)
+            jagged[2][i] = i;
+        // Вывести значения из первого массива.
+        for (i = 0; i < 4; i++)
+            Console.Write(jagged[0][i] + " ");
+        Console.WriteLine();
+        // Вывести значения из второго массива.
+        for (i = 0; i < 3; i++)
+            Console.Write(jagged[1][i] + " ");
+        Console.WriteLine();
+        // Вывести значения из третьего массива.
+        for (i = 0; i < 5; i++)
+            Console.Write(jagged[2][i] + " ");
+        Console.WriteLine();
+    }
+}
+
+```
+
+## code_92
+
+```cs
+// Присваивание ссылок на массивы.
+using System;
+
+class AssignARef
+{
+    static void Main()
+    {
+        int i;
+        int[] nums1 = new int[10];
+        int[] nums2 = new int[10];
+        for (i = 0; i < 10; i++) nums1[i] = i;
+        for (i = 0; i < 10; i++) nums2[i] = -i;
+        Console.Write("Содержимое массива nums1: ");
+        for (i = 0; i < 10; i++)
+            Console.Write(nums1[i] + " ");
+        Console.WriteLine();
+        Console.Write("Содержимое массива nums2: ");
+        for (i = 0; i < 10; i++)
+            Console.Write(nums2[i] + " ");
+        Console.WriteLine();
+        nums2 = nums1; // теперь nums2 ссылается на nums1
+        Console.Write("Содержимое массива nums2\n" + "после присваивания: ");
+        for (i = 0; i < 10; i++)
+            Console.Write(nums2[i] + " ");
+        Console.WriteLine();
+        // Далее оперировать массивом nums1 посредством
+        // переменной ссылки на массив nums2.
+        nums2[3] = 99;
+        Console.Write("Содержимое массива nums1 после изменения\n" +
+        "посредством переменной nums2: ");
+        for (i = 0; i < 10; i++)
+            Console.Write(nums1[i] + " ");
+        Console.WriteLine();
+    }
+}
+```
+
+## code_93
+
+```cs
+// Использовать свойство Length массива.
+using System;
+
+class LengthDemo
+{
+    static void Main()
+    {
+        int[] nums = new int[10];
+        Console.WriteLine("Длина массива nums равна " + nums.Length);
+        // Использовать свойство Length для инициализации массива nums.
+        for (int i = 0; i < nums.Length; i++)
+            nums[i] = i * i;
+        // А теперь воспользоваться свойством Length
+        // для вывода содержимого массива nums.
+        Console.Write("Содержимое массива nums: ");
+        for (int i = 0; i < nums.Length; i++)
+            Console.Write(nums[i] + " ");
+        Console.WriteLine();
+    }
+}
+
+```
+
+## code_94
+
+```cs
+// Использовать свойство Length трехмерного массива.
+using System;
+
+class LengthDemo3D
+{
+    static void Main()
+    {
+        int[,,] nums = new int[10, 5, 6];
+        Console.WriteLine("Длина массива nums равна " + nums.Length);
+    }
+}
+
+```
+
+## code_95
+
+```cs
+// Поменять местами содержимое элементов массива.
+using System;
+
+class RevCopy
+{
+    static void Main()
+    {
+        int i, j;
+        int[] nums1 = new int[10];
+        int[] nums2 = new int[10];
+        for (i = 0; i < nums1.Length; i++) nums1[i] = i;
+        Console.Write("Исходное содержимое массива: ");
+        for (i = 0; i < nums2.Length; i++)
+            Console.Write(nums1[i] + " ");
+        Console.WriteLine();
+        // Скопировать элементы массива nums1 в массив nums2 в обратном порядке.
+        if (nums2.Length >= nums1.Length) // проверить, достаточно ли
+                                          // длины массива nums2
+            for (i = 0, j = nums1.Length - 1; i < nums1.Length; i++, j--)
+                nums2[j] = nums1[i];
+        Console.Write("Содержимое массива в обратном порядке: ");
+        for (i = 0; i < nums2.Length; i++)
+            Console.Write(nums2[i] + " ");
+        Console.WriteLine();
+    }
+}
+
+```
+
+## code_96
+
+```cs
+// Продемонстрировать применение свойства Length
+// при обращении со ступенчатыми массивами.
+using System;
+
+class Jagged
+{
+    static void Main()
+    {
+        int[][] network_nodes = new int[4][];
+        network_nodes[0] = new int[3];
+        network_nodes[1] = new int[7];
+        network_nodes[2] = new int[2];
+        network_nodes[3] = new int[5];
+        int i, j;
+        // Сфабриковать данные об использовании ЦП.
+        for (i = 0; i < network_nodes.Length; i++)
+            for (j = 0; j < network_nodes[i].Length; j++)
+                network_nodes[i][j] = i * j + 70;
+        Console.WriteLine("Общее количество узлов сети: " +
+        network_nodes.Length + "\n");
+        for (i = 0; i < network_nodes.Length; i++)
+        {
+            for (j = 0; j < network_nodes[i].Length; j++)
+            {
+                Console.Write("Использование в узле сети " + i +
+                " ЦП " + j + ": ");
+                Console.Write(network_nodes[i][j] + "% ");
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+```
+
+## code_97
+
+```cs
+    // Продемонстрировать неявно типизированный ступенчатый массив.
+using System;
+
+class Jagged
+{
+    static void Main()
+    {
+        var jagged = new[] {
+        new[] { 1, 2, 3, 4 },
+        new[] { 9, 8, 7 },
+        new[] { 11, 12, 13, 14, 15 }
+    };
+        for (int j = 0; j < jagged.Length; j++)
+        {
+            for (int i = 0; i < jagged[j].Length; i++)
+                Console.Write(jagged[j][i] + " ");
+            Console.WriteLine();
+        }
+    }
+}
+
+```
+
+## code_98
+
+```cs
+    // Использовать оператор цикла foreach.
+using System;
+
+class ForeachDemo
+{
+    static void Main()
+    {
+        int sum = 0;
+        int[] nums = new int[10];
+        // Задать первоначальные значения элементов массива nums.
+        for (int i = 0; i < 10; i++)
+            nums[i] = i;
+        // Использовать цикл foreach для вывода значений
+        // элементов массива и подсчета их суммы.
+        foreach (int х in nums)
+        {
+            Console.WriteLine("Значение элемента равно: " + х);
+            sum += х;
+        }
+        Console.WriteLine("Сумма равна: " + sum);
+    }
+}
+
+```
+
+## code_99
+
+```cs
+// Использовать оператор break для преждевременного завершения цикла foreach.
+using System;
+
+class ForeachDemo
+{
+    static void Main()
+    {
+        int sum = 0;
+        int[] nums = new int[10];
+        // Задать первоначальные значения элементов массива nums.
+        for (int i = 0; i < 10; i++)
+            nums[i] = i;
+        // Использовать цикл foreach для вывода значений
+        // элементов массива и подсчета их суммы.
+        foreach (int x in nums)
+        {
+            Console.WriteLine("Значение элемента равно: " + x);
+            sum += x;
+            if (x == 4) break; // прервать цикл, как только индекс массива достигнет 4
+        }
+        Console.WriteLine("Сумма первых 5 элементов: " + sum);
+    }
+}
+
+```
+
+## code_100
+
+```cs
+    // Использовать оператор цикла foreach для обращения к двумерному массиву.
+using System;
+
+class ForeachDemo2
+{
+    static void Main()
+    {
+        int sum = 0;
+        int[,] nums = new int[3, 5];
+        // Задать первоначальные значения элементов массива nums.
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 5; j++)
+                nums[i, j] = (i + 1) * (j + 1);
+        // Использовать цикл foreach для вывода значений
+        // элементов массива и подсчета их суммы.
+        foreach (int х in nums)
+        {
+            Console.WriteLine("Значение элемента равно: " + х);
+            sum += х;
+        }
+        Console.WriteLine("Сумма равна: " + sum);
+    }
+}
+
+```
+
+## code_101
+
+```cs
+// Поиск в массиве с помощью оператора цикла foreach.
+using System;
+
+class Search
+{
+    static void Main()
+    {
+        int[] nums = new int[10];
+        int val;
+        bool found = false;
+        // Задать первоначальные значения элементов массива nums.
+        for (int i = 0; i < 10; i++)
+            nums[i] = i;
+        val = 5;
+        // Использовать цикл foreach для поиска заданного
+        // значения в массиве nums.
+        foreach (int x in nums)
+        {
+            if (x == val)
+            {
+                found = true;
+                break;
+            }
+        }
+        if (found)
+            Console.WriteLine("Значение найдено!");
+    }
+}
+
+```
+
+## code_102
+
+```cs
+// Создать и вывести символьную строку.
+using System;
+
+class StringDemo
+{
+    static void Main()
+    {
+        char[] charray = { 'Э', 'т', 'о', ' ', 'с', 'т', 'р', 'о', 'к', 'а'};
+        string str1 = new string(charray);
+        string str2 = "Еще одна строка.";
+        Console.WriteLine(str1);
+        Console.WriteLine(str2);
+    }
+}
+```

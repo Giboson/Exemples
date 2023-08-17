@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="utf-8">
+
 <head>
     <link rel="stylesheet" href="./kanban.css">
     <script language="JavaScript">
@@ -64,12 +66,12 @@
             }
         }
 	</script>
-    <title>Kanban Boards</title>
+    <title>Kanban Board</title>
 </head>
 <body>
     <div class="container">
         <div class="kanban-heading">
-            <strong class="kanban-heading-text">Kanban Boards</strong>
+            <strong class="kanban-heading-text">Kanban Board</strong>
         </div>
         <div class="kanban-board">
             <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -121,6 +123,7 @@
                     </select>
                 </span>
                 <span class="form-row-buttons">
+                    
                     <button id="edit-button" onclick="editTask()">Edit</span>
                     <button id="save-button" onclick="saveTask()">Save</span>
                     <button id="cancel-button" onclick="createTask()">Cancel</span>
