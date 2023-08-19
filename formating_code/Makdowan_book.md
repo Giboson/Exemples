@@ -3125,17 +3125,298 @@ class StringSwitch
 ## code_108
 
 ```cs
+// Отличия между видами доступа public и private к членам класса.
+using System;
+
+class MyClass
+{
+    private int alpha;  // закрытый доступ, указываемый я вно
+    int beta;     // закрытый доступ по умолчанию
+    public int gamma;   // открытый доступ
+                        // Методы, которым  доступны члены alpha и beta данногок ласса.
+                        // Член класса может иметь доступ к закрытому члену этого же класса.
+    public void SetAlpha(int а)
+    {
+        alpha = а;
+    }
+    public int GetAlpha()
+    {
+        return alpha;
+    }
+    public void SetBeta(int a)
+    {
+        beta = a;
+    }
+    public int GetBeta()
+    {
+        return beta;
+    }
+}
+class AccessDemo
+{
+    static void Main()
+    {
+        MyClass ob = new MyClass();
+        // Доступ к членам alpha и beta данного класса
+        // разрешен только посредством его методов.
+        ob.SetAlpha(-99);
+        ob.SetBeta(19);
+        Console.WriteLine("ob.alpha равно " + ob.GetAlpha());
+        Console.WriteLine("ob.beta равно " + ob.GetBeta());
+        // Следующие виды доступа к членам alpha и beta
+        // данного класса не разрешаются.
+        // ob.alpha = 10; // Ошибка! alpha - закрытый член!
+        // ob.beta =9;  // Ошибка! beta - закрытый член!
+        // Член gamma данного класса доступен непосредственно,
+        // поскольку он является открытым.
+        ob.gamma = 99;
+    }
+}
 
 ```
 
 ## code_109
 
 ```cs
+// Продемонстрировать применение класса Stack.
+using System;
+// Класс для хранения символов в стеке.
+class Stack
+{
+    // Эти члены класса являются закрытыми.
+    char[] stck; // массив, содержащий стек
+    int tos;  // индекс вершины стека
+              // Построить пустой класс Stack для реализации стека заданного размера.
+    public Stack(int size)
+    {
+        stck = new char[size]; // распределить память для стека
+        tos = 0;
+    }
+    // Поместить символы в стек.
+    public void Push(char ch)
+    {
+        if (tos == stck.Length)
+        {
+            Console.WriteLine(" - Стек заполнен.");
+            return;
+        }
+        stck[tos] = ch;
+        tos++;
+    }
+    // Извлечь символ из стека.
+    public char Pop()
+    {
+        if (tos == 0)
+        {
+            Console.WriteLine(" - Стек пуст.");
+            return (char)0;
+        }
+        tos--;
+        return stck[tos];
+    }
+    // Возвратить значение true, если стек заполнен.
+    public bool IsFull()
+    {
+        return tos == stck.Length;
+    }
+    // Возвратить значение true, если стек пуст.
+    public bool IsEmpty()
+    {
+        return tos == 0;
+    }
+    // Возвратить общую емкость стека.
+    public int Capacity()
+    {
+        return stck.Length;
+    }
+    // Возвратить количество объектов, находящихся в данный момент в стеке.
+    public int GetNum()
+    {
+        return tos;
+    }
+}
+class StackDemo
+{
+    static void Main()
+    {
+        Stack stk1 = new Stack(10);
+        Stack stk2 = new Stack(10);
+        Stack stk3 = new Stack(10);
+        char ch;
+        int i;
+        // Поместить ряд символов в стек stk1.
+        Console.WriteLine("Поместить символы А-J в стек stk1.");
+        for (i = 0; !stk1.IsFull(); i++)
+            stk1.Push((char)('A' + i));
+        if (stk1.IsFull()) Console.WriteLine("Стек stk1 заполнен.");
+        // Вывести содержимое стека stk1.
+        Console.Write("Содержимое стека stk1: ");
+        while (!stk1.IsEmpty())
+        {
+            ch = stk1.Pop();
+            Console.Write(ch);
+        }
+        Console.WriteLine();
+        if (stk1.IsEmpty()) Console.WriteLine("Стек stk1 пуст.\n");
+        // Поместить дополнительные символы в стек stk1.
+        Console.WriteLine("Вновь поместить символы A-J в стек stk1.");
+        for (i = 0; !stk1.IsFull(); i++)
+            stk1.Push((char)('A' + i));
+        // А теперь извлечь элементы из стека stk1 и поместить их в стек stk2.
+        // В итоге элементы сохраняются в стеке stk2 в обратном порядке.
+        Console.WriteLine("А теперь извлечь символы из стека stk1\n" +
+        "и поместить их в стек stk2.");
+        while (!stk1.IsEmpty())
+        {
+            ch = stk1.Pop();
+            stk2.Push(ch);
+        }
+        Console.Write("Содержимое стека stk2: ");
+        while (!stk2.IsEmpty())
+        {
+            ch = stk2.Pop();
+            Console.Write(ch);
+        }
+        Console.WriteLine("\n");
+        // Поместить 5 символов в стек.
+        Console.WriteLine("Поместить 5 символов в стек stk3.");
+        for (i = 0; i < 5; i++)
+            stk3.Push((char)('A' + i));
+        Console.WriteLine("Емкость стека stk3: " + stk3.Capacity());
+        Console.WriteLine("Количество объектов в стеке stk3: " +
+        stk3.GetNum());
+    }
+}
+
 
 ```
 
 ## code_110
 
 ```cs
+// Пример передачи объектов методам по ссылке.
+using System;
+
+class MyClass
+{
+    int alpha, beta;
+    public MyClass(int i, int j)
+    {
+        alpha = i;
+        beta = j;
+    }
+    // Возвратить значение true, если параметр ob
+    // имеет те же значения, что и вызывающий объект.
+    public bool SameAs(MyClass ob)
+    {
+        if ((ob.alpha == alpha) & (ob.beta == beta))
+            return true;
+        else return false;
+    }
+    // Сделать копию объекта ob.
+    public void Copy(MyClass ob)
+    {
+        alpha = ob.alpha;
+        beta = ob.beta;
+    }
+    public void Show()
+    {
+        Console.WriteLine("alpha: (0), beta: (1}",
+        alpha, beta);
+    }
+}
+class PassOb
+{
+    static void Main()
+    {
+        MyClass ob1 = new MyClass(4, 5);
+        MyClass ob2 = new MyClass(6, 7);
+        Console.Write("ob1: ");
+        ob1.Show();
+        Console.Write("ob2: ");
+        ob2.Show();
+        if (ob1.SameAs(ob2))
+            Console.WriteLine("ob1 и ob2 имеют одинаковые значения.");
+        else
+            Console.WriteLine("ob1 и ob2 имеют разные значения.");
+        Console.WriteLine();
+        // А теперь сделать объект ob1 копией объекта ob2.
+        ob1.Copy(ob2);
+        Console.Write("оЫ после копирования: ");
+        ob1.Show();
+        if (ob1.SameAs(ob2))
+            Console.WriteLine("ob1 и ob2 имеют одинаковые значения.");
+        else
+            Console.WriteLine("ob1 и ob2 имеют разные значения.");
+    }
+}
+
+```
+
+# code_111
+
+```cs
+// Передача аргументов обычных типов по значению.
+using System;
+
+class Test
+{
+    /* Этот метод не оказывает никакого влияния на
+    аргументы, используемые для его вызова. */
+    public void NoChange(int i, int j)
+    {
+        i = i + j;
+        j = -j;
+    }
+}
+class CallByValue
+{
+    static void Main()
+    {
+        Test ob = new Test();
+        int a = 15, b = 20;
+        Console.WriteLine("а и b до вызова: " +
+        a + " " + b);
+        ob.NoChange(a, b);
+        Console.WriteLine("а и b после вызова: " +
+        a + " " + b);
+    }
+}
+```
+
+## code_112
+
+```cs
+// Передача объектов по ссылке.
+using System;
+
+class Test
+{
+    public int a, b;
+    public Test(int i, int j)
+    {
+        a = i;
+        b = j;
+    }
+    /* Передать объект. Теперь переменные ob.а и ob.b из объекта,
+    используемого в вызове метода, будут изменены. */
+    public void Change(Test ob)
+    {
+        ob.a = ob.a + ob.b;
+        ob.b = -ob.b;
+    }
+}
+class CallByRef
+{
+    static void Main()
+    {
+        Test ob = new Test(15, 20);
+        Console.WriteLine("ob.а и ob.b до вызова: " +
+        ob.a + " " + ob.b);
+        ob.Change(ob);
+        Console.WriteLine("ob.а и ob.b после вызова: " +
+        ob.a + " " + ob.b);
+    }
+}
 
 ```
