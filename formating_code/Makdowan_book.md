@@ -3420,3 +3420,335 @@ class CallByRef
 }
 
 ```
+
+## code_113
+
+```cs
+// Использовать модификатор ref для передачи значения обычного типа по ссылке.
+using System;
+
+class RefTest
+{
+    // Этот метод изменяет свой аргумент. Обратите
+    // внимание на применение модификатора ref.
+    public void Sqr(ref int i)
+    {
+        i = i * i;
+    }
+}
+class RefDemo
+{
+    static void Main()
+    {
+        RefTest ob = new RefTest();
+        int a = 10;
+        Console.WriteLine("а до вызова: " + a);
+        ob.Sqr(ref a); // обратите внимание на применение модификатора ref
+        Console.WriteLine("а после вызова: " + a);
+    }
+}
+```
+
+## code_114
+
+```cs
+// Поменять местами два значения.
+using System;
+
+class ValueSwap
+{
+    // Этот метод меняет местами свои аргументы.
+    public void Swap(ref int a, ref int b)
+    {
+        int t;
+        t = a;
+        a = b;
+        b = t;
+    }
+}
+class ValueSwapDemo
+{
+    static void Main()
+    {
+        ValueSwap ob = new ValueSwap();
+        int x = 10, у = 20;
+        Console.WriteLine("x и у до вызова: " + x + " " + у);
+        ob.Swap(ref x, ref у);
+        Console.WriteLine("х и у после вызова: " + x + " " + у);
+    }
+}
+
+```
+
+## code_115
+
+```cs
+// Использовать модификатор параметра out.
+using System;
+
+class Decompose
+{
+    /* Разделить числовое значение с плавающей точкой на
+    целую и дробную части. */
+    public int GetParts(double n, out double frac)
+    {
+        int whole;
+        whole = (int)n;
+        frac = n - whole; // передать дробную часть числа через параметр frac
+        return whole;      // в озвратить целую часть числа
+    }
+}
+class UseOut
+{
+    static void Main()
+    {
+        Decompose ob = new Decompose();
+        int i;
+        double f;
+        i = ob.GetParts(10.125, out f);
+        Console.WriteLine("Целая часть числа равна " + i);
+        Console.WriteLine("Дробная часть числа равна " + f);
+    }
+}
+
+```
+
+## code_116
+
+```cs
+// Использовать два параметра типа out.
+using System;
+
+class Num
+{
+    /* Определить, имеется ли у числовых значений переменных х и v
+    общий множитель. Если имеется, то возвратить наименьший и
+    наибольший множители посредством параметров типа out. */
+    public bool HasComFactor(int x, int y,
+    out int least, out int greatest)
+    {
+        int i;
+        int max = x < y ? x : y;
+        bool first = true;
+        least = 1;
+        greatest = 1;
+        // Найти наименьший и наибольший общий множитель.
+        for (i = 2; i <= max / 2 + 1; i++)
+        {
+            if (((y % i) == 0) & ((x % i) == 0))
+            {
+                if (first)
+                {
+                    least = i;
+                    first = false;
+                }
+                greatest = i;
+            }
+        }
+        if (least != 1) return true;
+        else return false;
+    }
+}
+class DemoOut
+{
+    static void Main()
+    {
+        Num ob = new Num();
+        int lcf, gcf;
+        if (ob.HasComFactor(231, 105, out lcf, out gcf))
+        {
+            Console.WriteLine("Наименьший общий множитель " +
+            "чисел 231 и 105 равен " + lcf);
+            Console.WriteLine("Наибольший общий множитель " +
+            "чисел 231 и 105 равен " + gcf);
+        }
+        else
+            Console.WriteLine("Общий множитель у чисел 35 и 49 отсутствует.");
+        if (ob.HasComFactor(35, 51, out lcf, out gcf))
+        {
+            Console.WriteLine("Наименьший общий множитель " +
+            "чисел 35 и 51 равен " + lcf);
+            Console.WriteLine("Наибольший общий множитель " +
+            "чисел 35 и 51 равен " + gcf);
+        }
+        else
+            Console.WriteLine("Общий множитель у чисел 35 и 51 отсутствует.");
+    }
+}
+
+```
+
+## code_117
+
+```cs
+// Поменять местами две ссылки.
+using System;
+
+class RefSwap
+{
+    int a, b;
+    public RefSwap(int i, int j)
+    {
+        a = i;
+        b = j;
+    }
+    public void Show()
+    {
+        Console.WriteLine("a: {0}, b: {l}", a, b);
+    }
+    // Этот метод изменяет свои аргументы.
+    public void Swap(ref RefSwap ob1, ref RefSwap ob2)
+    {
+        RefSwap t;
+        t = ob1;
+        ob1 = ob2;
+        ob2 = t;
+    }
+}
+class RefSwapDemo
+{
+    static void Main()
+    {
+        RefSwap x = new RefSwap(1, 2);
+        RefSwap y = new RefSwap(3, 4);
+        Console.Write("x до вызова: ");
+        x.Show();
+        Console.Write("у до вызова: ");
+        y.Show();
+        Console.WriteLine();
+        // Смена объектов, на которые ссылаются аргументы х и у.
+        x.Swap(ref x, ref y);
+        Console.Write("х после вызова: ");
+        x.Show();
+        Console.Write("у после вызова: ");
+        y.Show();
+    }
+}
+```
+
+## code_118
+
+```cs
+// Продемонстрировать применение модификатора params.
+using System;
+
+class Min
+{
+    public int MinVal(params int[] nums)
+    {
+        int m;
+        if (nums.Length == 0)
+        {
+            Console.WriteLine("Ошибка: нет аргументов.");
+            return 0;
+        }
+        m = nums[0];
+        for (int i = 1; i < nums.Length; i++)
+            if (nums[i] < m) m = nums[i];
+        return m;
+    }
+}
+class ParamsDemo
+{
+    static void Main()
+    {
+        Min ob = new Min();
+        int min;
+        int a = 10, b = 20;
+        // Вызвать метод с двумя значениями.
+        min = ob.MinVal(a, b);
+        Console.WriteLine("Наименьшее значение равно " + min);
+        // Вызвать метод с тремя значениями.
+        min = ob.MinVal(a, b, -1);
+        Console.WriteLine("Наименьшее значение равно " + min);
+        // Вызвать метод с пятью значениями.
+        min = ob.MinVal(18, 23, 3, 14, 25);
+        Console.WriteLine("Наименьшее значение равно " + min);
+        // Вызвать метод с массивом целых значений.
+        int[] args = { 45, 67, 34, 9, 112, 8 };
+        min = ob.MinVal(args);
+        Console.WriteLine("Наименьшее значение равно " + min);
+    }
+}
+
+```
+
+## code_119
+
+```cs
+// Использовать обычный параметр вместе с параметром
+// переменной длины типа params.
+using System;
+
+class MyClass
+{
+    public void ShowArgs(string msg, params int[] nums)
+    {
+        Console.Write(msg + " " );
+    foreach (int i in nums)
+            Console.Write(i + " ");
+        Console.WriteLine();
+    }
+}
+class ParamsDemo2
+{
+    static void Main()
+    {
+        MyClass ob = new MyClass();
+        ob.ShowArgs("Это ряд целых чисел",
+        1, 2, 3, 4, 5);
+        ob.ShowArgs("А это еще два целых числа ",
+        17, 20);
+    }
+}
+```
+
+## code_120
+
+```cs
+// Возвратить объект из метода.
+using System;
+
+class Rect
+{
+    int width;
+    int height;
+    public Rect(int w, int h)
+    {
+        width = w;
+        height = h;
+    }
+    public int Area()
+    {
+        return width * height;
+    }
+    public void Show()
+    {
+        Console.WriteLine(width + " " + height);
+    }
+    /* Метод возвращает прямоугольник со сторонами, пропорционально
+    увеличенными на указанный коэффициент по сравнению с вызывающим
+    объектом прямоугольника. */
+    public Rect Enlarge(int factor)
+    {
+        return new Rect(width * factor, height * factor);
+    }
+}
+class RetObj
+{
+    static void Main()
+    {
+        Rect r1 = new Rect(4, 5);
+        Console.Write("Размеры прямоугольника r1: ");
+        r1.Show();
+        Console.WriteLine("Площадь прямоугольника r1: " + r1.Area());
+        Console.WriteLine();
+        // Создать прямоугольник в два раза больший прямоугольника r1.
+        Rect r2 = r1.Enlarge(2);
+        Console.Write("Размеры прямоугольника r2: ");
+        r2.Show();
+        Console.WriteLine("Площадь прямоугольника r2: " + r2.Area());
+    }
+}
+
+```
