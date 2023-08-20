@@ -3752,3 +3752,177 @@ class RetObj
 }
 
 ```
+
+## code_121
+
+```cs
+// Использовать фабрику класса.
+using System;
+
+class MyClass
+{
+    int a, b; // закрытые члены класса
+              // Создать фабрику для класса MyClass.
+    public MyClass Factory(int i, int j)
+    {
+        MyClass t = new MyClass();
+        t.a = i;
+        t.b = j;
+        return t; // возвратить объект
+    }
+    public void Show()
+    {
+        Console.WriteLine("а и b: " + a + " " + b);
+    }
+}
+class MakeObjects
+{
+    static void Main()
+    {
+        MyClass ob = new MyClass();
+        int i, j;
+        // Сформировать объекты, используя фабрику класса.
+        for (i = 0, j = 10; i < 10; i++, j--)
+        {
+            MyClass anotherOb = ob.Factory(i, j); // создать объект
+            anotherOb.Show();
+        }
+        Console.WriteLine();
+    }
+}
+```
+
+## code_122
+
+```cs
+
+// Возвратить массив из метода.
+using System;
+
+class Factor
+{
+    /* Метод возвращает массив facts, содержащий множители аргумента num.
+    При возврате из метода параметр numfactors типа out будет содержать
+    количество обнаруженных множителей. */
+    public int[] FindFactors(int num, out int numfactors)
+    {
+        int[] facts = new int[80]; // размер массива 80 выбран произвольно
+        int i, j;
+        // Найти множители и поместить их в массив facts.
+        for (i = 2, j = 0; i < num / 2 + 1; i++)
+            if ((num % i) == 0)
+            {
+                facts[j] = i;
+                j++;
+            }
+        numfactors = j;
+        return facts;
+    }
+}
+class FindFactors
+{
+    static void Main()
+    {
+        Factor f = new Factor();
+        int numfastors;
+        int[] factors;
+        factors = f.FindFactors(1000, out numfastors);
+        Console.WriteLine("Множители числа 1000: ");
+        for (int i = 0; i < numfastors; i++)
+            Console.Write(factors[i] + " ");
+        Console.WriteLine();
+    }
+}
+```
+
+## code_123
+
+```cs
+// Продемонстрировать перегрузку методов.
+using System;
+
+class Overload
+{
+    public void OvlDemo()
+    {
+        Console.WriteLine("Без параметров");
+    }
+    // Перегрузка метода OvlDemo с одним целочисленным параметром.
+    public void OvlDemo(int a)
+    {
+        Console.WriteLine("Один параметр: " + a);
+    }
+    // Перегрузка метода OvlDemo с двумя целочисленными параметрами.
+    public int OvlDemo(int a, int b)
+    {
+        Console.WriteLine("Два параметра: " + a + " " + b);
+        return a + b;
+    }
+    // Перегрузка метода OvlDemo с двумя параметрами типа double.
+    public double OvlDemo(double a, double b)
+    {
+        Console.WriteLine("Два параметра типа double: " +
+        a + " " + b);
+        return a + b;
+    }
+}
+class OverloadDemo
+{
+    static void Main()
+    {
+        Overload ob = new Overload();
+        int resI;
+        double resD;
+        // Вызвать все варианты метода OvlDemo().
+        ob.OvlDemo();
+        Console.WriteLine();
+        ob.OvlDemo(2);
+        Console.WriteLine();
+        resI = ob.OvlDemo(4, 6);
+        Console.WriteLine("Результат вызова метода ob.OvlDemo(4, 6): " + resI);
+        Console.WriteLine();
+        resD = ob.OvlDemo(1.1, 2.32);
+        Console.WriteLine("Результат вызова метода ob.OvlDemo(1.1, 2.32): " +
+        resD);
+    }
+}
+
+```
+
+## code_124
+
+```cs
+// Неявные преобразования типов могут повлиять на
+// решение перегружать метод.
+using System;
+
+class Overload2
+{
+    public void MyMeth(int x)
+    {
+        Console.WriteLine("В методе MyMeth(int): " + x);
+    }
+    public void MyMeth(double x)
+    {
+        Console.WriteLine("В методе MyMeth(double): " + x);
+    }
+}
+class TypeConv
+{
+    static void Main()
+    {
+        Overload2 ob = new Overload2();
+        int i = 10;
+        double d = 10.1;
+        byte b = 99;
+        short s = 10;
+        float f = 11.5F;
+        ob.MyMeth(i); // вызватьм етод ob.MyMeth(int)
+        ob.MyMeth(d); // вызватьм етод ob.MyMeth(double)
+        ob.MyMeth(b); // вызватьм етод ob.MyMeth(int)  -- с  преобразованием типа
+        ob.MyMeth(s); // вызватьм етод ob.MyMeth(int)  -- с преобразованием  типа
+        ob.MyMeth(f); // вызвать метод ob.MyMeth(double) -- с преобразованием типа
+    }
+}
+
+```
