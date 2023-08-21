@@ -1,12 +1,12 @@
-
-## no_test01
+## Code_test01
 
 ```py
+
  import os
         import shutil
 
         # Paths
-        DOWNLOADS_PATH = os.path.expanduser(\Kanban Board_dev)
+        DOWNLOADS_PATH = os.path.expanduser(\Kanban_Board_dev)
         # location
         ORGANIZED_PATHS = {
             'Documents': ['.pdf', '.doc', '.docx', '.txt', '.md', '.xlsx', '.ppt'],
@@ -50,5 +50,5 @@
      name = 15
      print(name + 5)
     </py-script>
-    <py-script> print([x for x in range(20)])</py-script>|
+    <py-script> print([x for x in range(22)])</py-script>|
 ```
