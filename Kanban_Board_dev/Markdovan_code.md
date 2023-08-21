@@ -55,6 +55,8 @@
     <py-script>
 
      print([x for x in range(22)])
+     name = input("Please, enter your name: ")
+     print(f"Hello, {name}!")
 
     </py-script>|
 ```
