@@ -310,5 +310,48 @@ int Max(int arg1, int arg2, int arg3)
 # Lesson_13
 
 ```cs
+// вид 1 
+    void Method1()
+    {
+    Console.WriteLine("@Autor: -> Andrew ");
+    }
+    Method1();
 
+// вид 2 
+    void Method2(string msg, int count)
+        {
+
+         int i = 0;
+         while (i < count)
+            {
+             Console.WriteLine(msg);
+            i++; 
+            }
+
+        }
+    Method2(msg:" 1:Text", count: 1);
+    Method2(count: 1, msg:" 2:Text");
+
+    // вид 3
+    int Method3()
+    {
+        return DateTime.Now.Year;
+    }
+    int year = Method3();
+    Console.WriteLine(year);
+
+    // вид 4
+    string Method4(int count, string text)
+    {
+        int i = 0;
+        string result = String.Empty;
+        while (i < count)
+        {
+            result = result + text;
+            i++;
+        }
+        return result;
+    } 
+    string res = Method4(2, " 3:Text");
+    Console.WriteLine(res);
 ```
