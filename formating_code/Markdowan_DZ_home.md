@@ -248,23 +248,32 @@ int dayNumber = ReadInt("Введите число от 1 до 7: ");
         12821 -> да
 */
 
+  
+/**
+        Принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+        14212 -> нет
+        23432 -> да
+        12821 -> да
+*/
+
   using System;
 
 public class Answer
 {
     static bool IsPalindrome(int number)
     {
-        // преобразование целого числа в строку
-        string num = number.ToString();
-        // переверните строку
-        char[] reversed_num = num.ToCharArray();
-        Array.Reverse(reversed_num);
-        string reversed_num_str = new string(reversed_num);
-        // проверка того, является ли число палиндромом или нет
-        if (num == reversed_num_str) {
-            return true;
+    if (number < 10000 || number >= 100000){
+            Console.WriteLine("Число не пятизначное");
+            return false;
         }
-        return false;
+
+        int reverse = 0;
+        int temp = number;
+        while (temp > 0){
+            reverse = reverse * 10 + temp % 10;
+            temp /= 10;
+        }
+        return reverse == number;
     }
   
      // Не удаляйте и не меняйте метод Main! 
@@ -277,7 +286,7 @@ public class Answer
         {
            // Здесь вы можете поменять значения для отправки кода на Выполнение
            // 1. 14212 -> нет 2. 23432 -> да 3. 12821 -> да:
-            number = 14212;
+            number = 645464;
 
         }
 
@@ -285,7 +294,7 @@ public class Answer
         bool result = IsPalindrome(number);
         System.Console.WriteLine($"{result}");
     }
-}    
+} 
 
 ```
 
