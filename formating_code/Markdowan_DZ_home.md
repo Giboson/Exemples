@@ -248,14 +248,6 @@ int dayNumber = ReadInt("Введите число от 1 до 7: ");
         12821 -> да
 */
 
-  
-/**
-        Принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-        14212 -> нет
-        23432 -> да
-        12821 -> да
-*/
-
   using System;
 
 public class Answer
@@ -360,7 +352,8 @@ public class Answer
 # Task_10
 
 ```cs
-    /**
+    /** 
+    задача 24:
    Внутри класса Answer напишите метод ShowCube, который принимает на вход число (N) и выводит таблицу кубов чисел от 1 до N (включительно) каждое на новой строке.
 /* N = 3 
 1
@@ -585,5 +578,127 @@ string seriesNew = RemovingSpaces(seriesOfNumbers);
 int[] arrayOfNumbers = ArrayOfNumbers(seriesNew);
 
 PrintArry(arrayOfNumbers);
+
+```
+
+# Task_14
+
+```cs
+// Задача 34: Задайте массив заполненный случайными положительными
+// трёхзначными числами. Напишите программу, которая покажет количество
+// чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
+
+int size = ReadInt("Введите размерность массива: ");
+int[] numbers = new int[size];
+
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+int result = 0;
+
+for (int i = 0; i < numbers.Length; i++)
+{
+      if (numbers[i] % 2 == 0)
+      {
+            result++;
+      }
+}
+if (result % 10 == 1)
+{
+      Console.WriteLine($"В массиве {result} четное число");
+}
+if (result % 10 == 2 || result % 10 == 3 || result % 10 == 4)
+{
+      Console.WriteLine($"В массиве {result} четных числа");
+}
+else
+
+      Console.WriteLine($"В массиве {result} четных чисел");
+
+// Методы
+void FillArrayRandomNumbers(int[] array) //Заполнение массива
+{
+      for (int i = 0; i < array.Length; i++)
+      {
+            array[i] = new Random().Next(99, 999);
+      }
+}
+
+void PrintArray(int[] array) //Вывод массива на экран
+{
+      for (int i = 0; i < array.Length; i++)
+      {
+            Console.Write(array[i] + " ");
+      }
+      Console.WriteLine();
+}
+
+
+int ReadInt(string message)  //Функция ввода
+{
+      Console.Write(message);
+      return Convert.ToInt32(Console.ReadLine());
+}
+```
+
+# Task_15
+
+```cs
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами.
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+int size = ReadInt("Введите размерность массива: ");
+int min = ReadInt("Введите минимальное число массива: ");
+int max = ReadInt("Введите максимальное число массива: ");
+int[] numbers = new int[size];
+
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+int result = 0;
+
+for (int i = 0; i < numbers.Length; i++)
+{
+      if (i % 2 != 0)
+      {
+            result += numbers[i];
+      }
+}
+Console.WriteLine($"Сумма элементов нечетных позиций = {result}");
+
+// Методы
+void FillArrayRandomNumbers(int[] array) //Заполнение массива
+{
+      for (int i = 0; i < array.Length; i++)
+      {
+            array[i] = new Random().Next(min, max);
+      }
+}
+
+void PrintArray(int[] array) //Вывод массива на экран
+{
+      for (int i = 0; i < array.Length; i++)
+      {
+            Console.Write(array[i] + " ");
+      }
+      Console.WriteLine();
+}
+
+int ReadInt(string message)  //Функция ввода
+{
+      Console.Write(message);
+      return Convert.ToInt32(Console.ReadLine());
+}
+
+```
+
+# Task_16
+
+```cs
+// Задача 38: Задайте массив вещественных чисел.
+// Найдите разницу между максимальным и минимальным элементов массива.
+// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 
 ```
