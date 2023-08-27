@@ -460,8 +460,9 @@ void PrintArray(int[] array)
 # Lesson_16
 
 ```cs
-        // Array of integers
-        int[] intArray = new int[] {
+        // Массив целых чисел
+        int[] intArray = new int[] 
+        {
             9,
             2,
             4,
@@ -471,21 +472,24 @@ void PrintArray(int[] array)
         };
         // metod 2
         Console.WriteLine("Исходный массив");
-        foreach(int i in intArray) {
+        foreach(int i in intArray) 
+        {
             Console.Write(i + " ");
         }
         Console.WriteLine();
         // Отсортировать массив в порядке возрастания
         Console.WriteLine("Отсортированный массив в порядке возрастания");
         Array.Sort(intArray);
-        foreach(int i in intArray) {
+        foreach(int i in intArray) 
+        {
             Console.Write(i + " ");
         }
         Console.WriteLine();
         Console.WriteLine("Отсортированный массив в порядке убывания");
         // Отсортировать массив в порядке убывания
         Array.Reverse(intArray);
-        foreach(int i in intArray) {
+        foreach(int i in intArray) 
+        {
             Console.Write(i + " ");
         }
         Console.WriteLine();
