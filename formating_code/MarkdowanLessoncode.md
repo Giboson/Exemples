@@ -421,4 +421,80 @@ string newText = Replace(text, ' ', '|');
       Console.WriteLine();
       newText = Replace(newText, 'с', 'C');
       Console.WriteLine(newText);
+ // metod 1
+     int[] arr ={ 1, 5, 4, 3, 2, 6, 7, 5, 1};
+
+void PrintArray(int[] array)
+{
+      int count = array.Length;
+
+      for (int i = 0; i  < count; i++)
+      {
+            Console.Write($"{array[i]} ");
+      }
+      Console.WriteLine();
+}
+      void  SelectionSort(int[] array)
+      {
+            
+            for (int i = 0; i < array.Length -1; i++)
+            {
+                  int minPosition = i;
+                  //
+                  for (int j = i + 1; j < array.Length ; j++)
+                  {
+                        if (array[j] < array[minPosition]) minPosition = j;
+
+                  }
+
+                  int temporary = array[i];
+                  array[i] = array[minPosition];
+                  array[minPosition] = temporary;
+            }
+      }
+      PrintArray(arr);
+      SelectionSort(arr);
+      PrintArray(arr); 
+```
+
+# Lesson_16
+
+```cs
+        // Array of integers
+        int[] intArray = new int[] {
+            9,
+            2,
+            4,
+            3,
+            1,
+            5
+        };
+        // metod 2
+        Console.WriteLine("Исходный массив");
+        foreach(int i in intArray) {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        // Отсортировать массив в порядке возрастания
+        Console.WriteLine("Отсортированный массив в порядке возрастания");
+        Array.Sort(intArray);
+        foreach(int i in intArray) {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        Console.WriteLine("Отсортированный массив в порядке убывания");
+        // Отсортировать массив в порядке убывания
+        Array.Reverse(intArray);
+        foreach(int i in intArray) {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+
+```
+
+# Lesson_17
+
+```cs
+
+
 ```
