@@ -408,28 +408,40 @@ public class Answer
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-int numberA = ReadInt("Введите число: ");
-int numberB = ReadInt("Введите степень: ");
-ToDegree(numberA, numberB);
-
-
-// Функция возведения в степень
-void ToDegree(int a, int b)
-{
-    int result = 1;
-    for (int i = 1; i <= b; i++)
+    int Prompt(string massage)
     {
-        result = result * a;
-    }
-    Console.WriteLine(a + " в степени " + b + " = " + result);
-}
+    System.Console.Write(massage); // Enter  (A & B)
+    string readImput = System.Console.ReadLine(); // number -> name
+    int result = int.Parse(readImput);
+    return result;
 
-// Функция ввода
-int ReadInt(string message)
-{
-    Console.WriteLine(message);
-    return Convert.ToInt32(Console.ReadLine());
-}
+    }
+
+    int Power(int powerBase, int expronent)
+    {
+        int power = 1;
+        for (int i = 0; i < expronent; i++)
+        {
+            power *= powerBase;
+        }
+       return power;
+    } 
+    bool ValidateExponent(int expronent)
+    {
+        if (expronent < 0)
+            {
+                System.Console.WriteLine("Покозатель не должен быть меншье нуля");
+                return false;
+            }
+            return true;
+
+    }
+    int powerBase = Prompt("Введите основание: ");
+    int expronent = Prompt("Введите показатель: ");
+    if(ValidateExponent(expronent))
+    {
+        System.Console.WriteLine($"Число {powerBase} в степени {expronent} ровно {Power(powerBase, expronent)}");
+    }
 
 ```
 
@@ -442,41 +454,27 @@ int ReadInt(string message)
 // 82 -> 10
 // 9012 -> 12
 
-int number = ReadInt("Введите число: ");
+int Prompt(string massage)
 
-int len = NumberLen(number);
-SumNumbers(number, len);
-
-// Функция подсчета цифр в числе
-int NumberLen(int a)
 {
-    int index = 0;
-    while (a > 0)
+    System.Console.Write(massage);
+    string readInput = System.Console.ReadLine();
+    int result = int.Parse(readInput);
+    return result;
+}
+    int SumAllDigit(int number)
     {
-        a /= 10;
-        index++;
-    }
-    return index;
-}
+        int result = 0;
+            while (number > 0)
+            {
+                result += number % 10;
+                number = number / 10;
 
-// Функция вывода суммы цифр в числе
-void SumNumbers(int n, int len)
-{
-    int sum = 0;
-    for (int i = 1; i <= len; i++)
-    {
-        sum += n % 10;
-        n /= 10;
+            }
+            return result;
     }
-    Console.WriteLine($"сумма цифр {sum}");
-}
-
-// Функция ввода
-int ReadInt(string message)
-{
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
-}
+    int number = Prompt("Введите число:");
+    System.Console.WriteLine($"Сумма всех чисел в цифре {number}={SumAllDigit(number)}");
 
 ```
 
@@ -700,5 +698,49 @@ int ReadInt(string message)  //Функция ввода
 // Задача 38: Задайте массив вещественных чисел.
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+
+int size = 10;
+int[] numbers = new int[size];
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+
+int max = numbers[0];
+int min = numbers[0];
+
+for (int i = 0; i < numbers.Length; i++)
+{
+    if (numbers[i] > max)
+    {
+        max = numbers[i];
+    }
+    else if (numbers[i] < min)
+    {
+        min = numbers[i];
+    }
+}
+
+Console.WriteLine($"Минимальное число: {min}");
+Console.WriteLine($"Минимальное число: {max}");
+Console.WriteLine($"Разница между максимальным и минимальным числами: {max-min}");
+
+
+
+void FillArrayRandomNumbers(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(1, 555);
+    }
+}
+
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
 
 ```
