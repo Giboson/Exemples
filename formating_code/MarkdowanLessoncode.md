@@ -622,3 +622,42 @@ void PrintImage(int[,]image)
     FillImage(13,13);
     PrintImage(pic);
 ```
+
+# Lesson_19
+
+```cs
+double Factoiral(int n)
+{
+    // 1! = 1
+    // 0! = 1
+    if (n == 1) return 1;
+    else return n * Factoiral(n - 1);
+
+}
+    for (int i = 1; i < 40; i++)
+    {
+
+        Console.WriteLine($"{i}! = {Factoiral(i)}"); 
+    }
+
+```
+
+# Lesson_20
+
+```cs
+
+// f(1) = 1
+// f(2) = 1
+// f(n) = f(n-1) + f(n-2)
+
+double Fibonacci(int n)
+{
+ if(n == 1 || n == 2) return 1;
+ else return Fibonacci(n-1) + Fibonacci(n-2);
+}
+for (int i = 1; i < 50; i++)
+{
+ Console.WriteLine($"f({i}) = {Fibonacci(i)}");
+}
+
+```
