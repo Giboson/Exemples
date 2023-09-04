@@ -1,2 +1,1 @@
 ﻿// For all sources
-
