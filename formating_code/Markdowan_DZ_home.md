@@ -745,6 +745,201 @@ Console.WriteLine($"Разница между максимальным и мин
 # Task_17
 
 ```cs
+// 1 
+// 0, 7, 8, -2, -2 -> 2 yes
+// 1, -7, 567, 89, 223-> 4 yes
+
+using System;
+  
+class Program
+{
+    static void Main(string[] args)
+    {
+        int count = 0;
+
+        Console.Write("Введите общее количество чисел: ");
+        int M = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < M; i++)
+        {
+            Console.Write($"Введите номер {i + 1}: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number > 0)
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine("Введенное количество чисел больше: " + count);
+    }
+}
+// Пример:
+// Введите общее количество чисел: 5
+// Введите номер 1: 1
+// Введите номер 2: -7
+// Введите номер 3: 567
+// Введите номер 4: 89
+// Введите номер 5: 223
+// Введенное количество чисел больше: 4
+
+// 2
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 4
+
+int Prompt(string massage)
+{
+  Console.Write(massage);
+  string value = Console.ReadLine();
+  int result = Convert.ToInt32(value);
+  return result;
+
+}
+int[] InputArray(int length)
+{
+  int[] array = new int[length];
+  for (int i = 0; i < array.Length; i++)
+  {
+    array[i] = Prompt($"Введите  {i + 1}-й элемент ");
+  }
+  return array;
+}
+void PrintArray(int[] array)
+{
+  for (int i = 0; i < array.Length; i++)
+  {
+      Console.WriteLine($"a[{i}]={array[i]}");
+  }
+
+}
+
+int CountPositiveNumber(int[] array)
+{
+  int count = 0;
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i] > 0)
+    {
+      count++;
+    }
+  }
+  return count;
+}
+
+int length = Prompt("Введите количество элементов  >");
+int[] array;
+array = InputArray(length);
+PrintArray(array);
+Console.WriteLine($"Количество чисел боле 0 -{CountPositiveNumber(array)}");
+
+```
+
+# Task_18
+
+```cs
+// 1
+// Напишите программу, 
+// которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
+// значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        double b1, k1, b2, k2;
+        
+        Console.Write("Введите значение параметра b1: ");
+        b1 = double.Parse(Console.ReadLine());
+        
+        Console.Write("Введите значение параметра k1: ");
+        k1 = double.Parse(Console.ReadLine());
+        
+        Console.Write("Введите значение параметра b2: ");
+        b2 = double.Parse(Console.ReadLine());
+        
+        Console.Write("Введите значение параметра k2: ");
+        k2 = double.Parse(Console.ReadLine());
+        
+        // Вычислите точку пересечения
+        double x = (b2 - b1) / (k1 - k2);
+        double y = k1 * x + b1;
+        
+        // Выведите точку пересечения
+        Console.WriteLine("Точка пересечения: ({0}; {1})", x, y);
+    }
+}
+
+//2 
+const int COEFFICIENT = 0;
+const int CONSTANT = 1;
+const int X_COORD = 0;
+const int Y_COORD = 1;
+const int LINE1 = 1;
+const int LINE2 = 2;
+
+double[] lineData1 = InputLineData(LINE1);
+double[] lineData2 = InputLineData(LINE2);
+
+
+if (ValidateLines(lineData1, lineData2))
+{
+  double[] coord = FindCoords(lineData1, lineData2);
+  Console.Write($"Точа пересечения уровнений y={lineData1[COEFFICIENT] }*x+{ lineData1[CONSTANT]} и y={lineData2[COEFFICIENT] }*x+{ lineData2[CONSTANT]}");
+  Console.WriteLine($"Имеет кординаты ({coord[X_COORD]},{coord[Y_COORD]})");
+}
+
+double Prompt(string message)
+{
+  Console.Write(message);
+  string value = Console.ReadLine();
+  double result = Convert.ToDouble(value);
+  return result;
+}
+double[] InputLineData(int nuberOfline)
+{
+  double[] lineData = new double[2];
+  lineData[COEFFICIENT] = Prompt($"Введите кофицент для {nuberOfline} прямой >");
+  lineData[CONSTANT] = Prompt($" Введите константу для {nuberOfline} прямой >");
+  return lineData;
+}
+double[] FindCoords(double[] lineData1, double[] lineData2)
+{
+  double[] coord = new double[2];
+  coord[X_COORD] = (lineData1[CONSTANT] - lineData2[CONSTANT]) / (lineData2[COEFFICIENT] - lineData1[COEFFICIENT]);
+  coord[Y_COORD] = lineData1[CONSTANT] * coord[X_COORD] + lineData1[CONSTANT];
+  return coord;
+
+}
+
+bool ValidateLines(double[] lineData1, double[] lineData2)
+{
+  if(lineData1[COEFFICIENT] == lineData2[COEFFICIENT])
+  {
+    if (lineData1[CONSTANT] == lineData2[CONSTANT])
+    {
+      Console.WriteLine("Прямиые совподают");
+      return false;
+
+    }
+    else
+    {
+      Console.WriteLine("Премые параллельны");
+      return false;
+
+    }
+  }
+  return true;
+}
+
+```
+
+# Task_19
+
+```cs
 
 /*
 Задача 47. 
