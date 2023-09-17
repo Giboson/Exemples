@@ -1266,67 +1266,51 @@ public class Answer
 using System;
 
 public class Answer {
-     public static void PrintArray (int [,] matrix)
+    public static void PrintArray (int [,] matrix)
     {
-         // Введите свое решение ниже
-        int rowCount = matrix.GetLength(0);
-        int colCount = matrix.GetLength(1);
-        for (int i = 0; i < rowCount; i++)
+        for (int i=0; i<matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < colCount; j++)
+            for (int j=0; j<matrix.GetLength(1);j++)
             {
-                Console.Write(matrix[i, j] + " ");
+                Console.Write($"{matrix[i,j]}"+"\t");
             }
             Console.WriteLine();
         }
     }
-   
+
     public static int[,] CreateIncreasingMatrix(int n, int m, int k)
     {
-        // Введите свое решение ниже
-        int[,] matrix = new int[n, m];
-        int count = k;
-        for (int i = 0; i < n; i++)
+        int[,] newMatrix = new int[n,m];
+        int currentValue = 1;
+        for (int i=0; i<n; i++)
         {
-            for (int j = 0; j < m; j++)
+            for (int j=0; j<m; j++)
             {
-                matrix[i, j] = count;
-                count += k;
+                newMatrix[i,j] = currentValue;
+                currentValue += k;
             }
         }
-        return matrix;
+        return newMatrix;
     }
-  public static int[] FindNumberByPosition (int [,] matrix, int rowPosition, int columnPosition)
+
+    public static int[] FindNumberByPosition (int [,] matrix, int rowPosition, int columnPosition)
     {  
-        // Введите свое решение ниже
-        int[] result = new int[1];
-        if (rowPosition >= 0 && rowPosition < matrix.GetLength(0) && columnPosition >= 0 && columnPosition < matrix.GetLength(1))
+        int [] number={0,-1};
+        if ((rowPosition-1) > 0 && (rowPosition-1)<=matrix.GetLength(0) && (columnPosition-1) > 0 && (columnPosition-1)<=matrix.GetLength(1) )
         {
-            result[0] = matrix[rowPosition, columnPosition];
+            number[1]=0;
+            number[0]=matrix[rowPosition-1,columnPosition-1];
+            return number;
         }
-        else
-        {
-            result[0] = -1;
-        }
-        return result;
+        return number;
     }
 
     public static void PrintCheckIfError (int[] results, int X, int Y)
     {
-        // Введите свое решение ниже
-        if (results[0] != -1)
-        {
-            Console.WriteLine("The number in [{0}, {1}] is {2}", X, Y, results[0]);
-        }
-        else
-        {
-            Console.WriteLine("There is no such index");
+        if (results[1]==-1){Console.WriteLine("There is no such index");}
+        else {Console.WriteLine($"The number in [{X}, {Y}] is {results[0]}");
         }
     }
-
-   
-            // Введите свое решение ниже
-
 
     // Не удаляйте и не меняйте метод Main! 
     // static public void Main(string[] args)
