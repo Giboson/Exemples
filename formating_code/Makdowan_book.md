@@ -4165,10 +4165,199 @@ class OverloadConsDemo
 
 ```cs
 
+// Простой пример, демонстрирующий применение инициализаторов объектов.
+using System;
+class MyClass
+{
+    public int Count;
+    public string Str;
+}
+class ObjInitDemo
+{
+    static void Main()
+    {
+        // Сконструировать объект типа MyClass, используя инициализаторы объектов.
+        //MyClass obj = new MyClass { Count = 100, Str = "Тестирование" };
+        MyClass obj = new MyClass { Str = "Тестирование", Count = 100 };
+        Console.WriteLine(obj.Count + " " + obj.Str);
+    }
+}
+
 ```
 
 ## code_130
 
 ```cs
+
+// Продемонстрировать необязательные аргументы.
+using System;
+class OptionArgDemo
+{
+    static void OptArgMeth(int alpha, int beta = 10, int gamma = 20)
+    {
+        Console.WriteLine("Это аргументы alpha, beta и gamma: " +
+        alpha + " " + beta + " " + gamma);
+    }
+    static void Main()
+    {
+        // Передать все аргументы явным образом.
+        OptArgMeth(1, 2, 3);
+        // Сделать аргумент gamma необязательным.
+        OptArgMeth(1, 2);
+        // Сделать оба аргумента beta и gamma необязательными.
+        OptArgMeth(1);
+    }
+}
+
+```
+
+## code_131
+
+```cs
+// Использовать необязательный аргумент, чтобы упростить вызов метода.
+using System;
+class UseOptArgs
+{
+    // Вывести на экран символьную строку полностью или частично.
+    static void Display(string str, int start = 0, int stop = -1)
+    {
+        if (stop < 0)
+            stop = str.Length;
+        // Проверить условие выхода за заданные пределы.
+        if (stop > str.Length | start > stop | start < 0)
+            return;
+        for (int i = start; i < stop; i++)
+            Console.Write(str[i]);
+        Console.WriteLine();
+    }
+    static void Main()
+    {
+        Display("это простой тест");
+        Display("это простой тест", 12);
+        Display("это простой тест", 4, 14);
+    }
+}
+
+```
+
+## code_132
+
+```cs
+
+// Применить именованные аргументы.
+using System;
+class NamedArgsDemo
+{
+    // Выяснить, делится ли одно значение нацело на другое.
+    static bool IsFactor(int val, int divisor)
+    {
+        if ((val % divisor) == 0) return true;
+        return false;
+    }
+    static void Main()
+    {
+        // Ниже демонстрируются разные способы вызова метода IsFactor().
+        // Вызов с использованием позиционных аргументов.
+        if (IsFactor(10, 2))
+            Console.WriteLine("2 - множитель 10.");
+        // Вызов с использованием именованных аргументов.
+        if (IsFactor(val: 10, divisor: 2))
+            Console.WriteLine("2 - множитель 10.");
+        // Для именованного аргумента порядок указания не имеет значения.
+        if (IsFactor(divisor: 2, val: 10))
+            Console.WriteLine("2 - множитель 10.");
+        // Применить как позиционный, так и именованный аргумент.
+        if (IsFactor(10, divisor: 2))
+            Console.WriteLine("2 - множитель 10.");
+    }
+}
+
+```
+
+## code_133
+
+```cs
+// Зашифровать и расшифровать сообщение, используя
+// простой подстановочный шифр.
+using System;
+class Cipher
+{
+    static int Main(string[] args)
+    {
+        // Проверить наличие аргументов.
+        if (args.Length < 2)
+        {
+            Console.WriteLine("ПРИМЕНЕНИЕ: " +
+            "слово1: <зашифровать>/<расшифровать> " +
+            "[слово2... словоN]");
+            return 1; // возвратить код неудачного завершения программы
+        }
+        // Если аргументы присутствуют, то первым аргументом должно быть
+        // слово <зашифровать> или же слово <расшифровать>.
+        if (args[0] != "зашифровать" & args[0] != "расшифровать")
+        {
+            Console.WriteLine("Первым аргументом должно быть слово " +
+            "<зашифровать> или <расшифровать>.");
+            return 1; // возвратить код неудачного завершения программы
+        }
+        // Зашифровать или расшифровать сообщение.
+        for (int n = 1; n < args.Length; n++)
+        {
+            for (int i = 0; i < args[n].Length; i++)
+            {
+                if (args[0] == "зашифровать")
+                    Console.Write((char)(args[n][i] + 1));
+                else
+                    Console.Write((char)(args[n][i] - 1));
+            }
+            Console.Write(" ");
+        }
+        Console.WriteLine();
+        return 0;
+    }
+}
+
+```
+
+## code_134
+
+```cs
+// Простой пример рекурсии.
+using System;
+class Factorial
+{
+    // Это рекурсивный метод.
+    public int FactR(int n)
+    {
+        int result;
+        if (n == 1) return 1;
+        result = FactR(n - 1) * n;
+        return result;
+    }
+    // Это итерационный метод.
+    public int FactI(int n)
+    {
+        int t, result;
+        result = 1;
+        for (t = 1; t <= n; t++) result *= t;
+        return result;
+    }
+}
+class Recursion
+{
+    static void Main()
+    {
+        Factorial f = new Factorial();
+        Console.WriteLine("Факториалы, рассчитанные рекурсивным методом.");
+        Console.WriteLine("Факториал числа 3 равен " + f.FactR(3));
+        Console.WriteLine("Факториал числа 4 равен " + f.FactR(4));
+        Console.WriteLine("Факториал числа 5 равен " + f.FactR(5));
+        Console.WriteLine();
+        Console.WriteLine("Факториалы, рассчитанные итерационным методом.");
+        Console.WriteLine("Факториал числа 3 равен " + f.FactR(3));
+        Console.WriteLine("Факториал числа 4 равен " + f.FactR(4));
+        Console.WriteLine("Факториал числа 5 равен " + f.FactR(5));
+    }
+}
 
 ```
