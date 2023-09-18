@@ -30,7 +30,7 @@ Datе[19.09.23]
  Status progress. 
  Vidio [link](https://ya.ru)
 > [!NOTE]
-не очень важное к выполнения
+выполнение не срочное 
 > [!IMPORTANT]
 Выполнять в течении дня
 > [!WARNING]
