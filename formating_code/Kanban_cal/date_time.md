@@ -13,8 +13,8 @@ Datе[19.09.23]
 
 > [!IMPORTANT]
 Установить java и среду IDEA  jar -v 11 домашне задания TCP/IP,HTTP для  написание сервера.
-[[1] IDE_Download](https://www.jetbrains.com/ru-ru/idea/)
-[[2] Jar_Download](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
+[IntelliJ IDEA -> 'Download'](https://www.jetbrains.com/ru-ru/idea/)
+[JavaSDK -> 'Download'](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
 
 ## Образец для заполнения
 
