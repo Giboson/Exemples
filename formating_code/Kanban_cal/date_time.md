@@ -16,7 +16,7 @@ Datе[19.09.23]
 - [ ] Препиесаит математику урок 2 разложение и слияние дробей
 - [ ] Домашне задания Т3 по  миатреце -> Пирамида Минто
 /Minto Pyramid [Презентация](https://gbcdn.mrgcdn.ru/uploads/asset/5512492/attachment/e08a98aeea467090afb0203364b57469.pdf)
-- [x] создать папку с html js css python java go ->  прогресию кода документировать в папке docs
+- [x] создать папку с html js css python java-srvlet go ->  прогресию кода документировать в папке docs
 
 > [!IMPORTANT]
 Установить java и среду IDEA  jar -v 11 домашне задания TCP/IP,HTTP для  написание сервера.
