@@ -4361,3 +4361,66 @@ class Recursion
 }
 
 ```
+
+## code_135
+
+```cs
+// Вывести символьную строку в обратном порядке, используя рекурсию.
+using System;
+class RevStr
+{
+    // Вывести символьную строку в обратном порядке.
+    public void DisplayRev(string str)
+    {
+        if (str.Length > 0)
+            DisplayRev(str.Substring(1, str.Length - 1));
+        else
+            return;
+        Console.Write(str[0]);
+    }
+}
+class RevStrDemo
+{
+    static void Main()
+    {
+        string s = "Это тест";
+        RevStr rsOb = new RevStr();
+        Console.WriteLine("Исходная строка: " + s);
+        Console.Write("Перевернутая строка: ");
+        rsOb.DisplayRev(s);
+        Console.WriteLine();
+    }
+}
+
+```
+
+## code_136
+
+```cs
+
+// Использовать модификатор static.
+using System;
+class StaticDemo
+{
+    // Переменная типа static.
+    public static int Val = 100;
+    // Метод типа static.
+    public static int ValDiv2()
+    {
+        return Val / 2;
+    }
+}
+class SDemo
+{
+    static void Main()
+    {
+        Console.WriteLine("Исходное значение переменной " +
+        "StaticDemo.Val равно " + StaticDemo.Val);
+        StaticDemo.Val = 8;
+        Console.WriteLine("Текущее значение переменной " +
+        "StaticDemo.Val равно " + StaticDemo.Val);
+        Console.WriteLine(" StaticDemo.ValDiv2(): " + StaticDemo.ValDiv2());
+    }
+}
+
+```
