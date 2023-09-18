@@ -1351,3 +1351,316 @@ public class Answer {
 }
 
 ```
+
+# Task_24
+
+```cs
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] matrix1 = { { 2, 4 }, { 3, 2 } };
+        int[,] matrix2 = { { 3, 4 }, { 3, 3 } };
+        int[,] result = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+
+        for (int i = 0; i < matrix1.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix2.GetLength(1); j++)
+            {
+                for (int k = 0; k < matrix2.GetLength(0); k++)
+                {
+                    result[i, j] += matrix1[i, k] * matrix2[k, j];
+                }
+            }
+        }
+
+        for (int i = 0; i < result.GetLength(0); i++)
+        {
+            for (int j = 0; j < result.GetLength(1); j++)
+            {
+                Console.Write(result[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+```
+
+# Task_25
+
+```cs
+
+// Задача 59: Задайте двумерный массив из целых чисел. Напишите программу, которая удалит строку и столбец, на пересечении которых расположен наименьший элемент массива.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// Наименьший элемент - 1, на выходе получим
+// следующий массив:
+// 9 4 2
+// 2 2 6
+// 3 4 7
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] matrix = {
+            { 1, 4, 7, 2 },
+            { 5, 9, 2, 3 },
+            { 8, 4, 2, 4 },
+            { 5, 2, 6, 7 }
+        };
+
+        int min = matrix[0, 0];
+        int minRowIndex = 0;
+        int minColumnIndex = 0;
+
+        // Find the minimum element and its indices
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] < min)
+                {
+                    min = matrix[i, j];
+                    minRowIndex = i;
+                    minColumnIndex = j;
+                }
+            }
+        }
+
+        // Create a new matrix without the row and column of the minimum element
+        int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+        int newRow = 0;
+        int newColumn = 0;
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            if (i != minRowIndex)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (j != minColumnIndex)
+                    {
+                        newMatrix[newRow, newColumn] = matrix[i, j];
+                        newColumn++;
+                    }
+                }
+
+                newRow++;
+                newColumn = 0;
+            }
+        }
+
+        // Print the new matrix
+        for (int i = 0; i < newMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < newMatrix.GetLength(1); j++)
+            {
+                Console.Write(newMatrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+```
+
+# Task_26
+
+```cs
+// Задача 62: Заполните спирально массив 4 на 4.
+// 1 2 3 4
+// 12 13 14 5
+// 11 16 15 6
+// 10 9 8 7
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] array = new int[4, 4];
+        int n = 4;
+        int value = 1;
+        int minRow = 0;
+        int maxRow = n - 1;
+        int minCol = 0;
+        int maxCol = n - 1;
+
+        while (value <= n * n)
+        {
+            for (int i = minCol; i <= maxCol; i++)
+            {
+                array[minRow, i] = value;
+                value++;
+            }
+            minRow++;
+
+            for (int i = minRow; i <= maxRow; i++)
+            {
+                array[i, maxCol] = value;
+                value++;
+            }
+            maxCol--;
+
+            for (int i = maxCol; i >= minCol; i--)
+            {
+                array[maxRow, i] = value;
+                value++;
+            }
+            maxRow--;
+
+            for (int i = maxRow; i >= minRow; i--)
+            {
+                array[i, minCol] = value;
+                value++;
+            }
+            minCol++;
+        }
+
+        // Print the array
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write(array[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+```
+
+# Task_27
+
+```cs
+// Задача 64:
+// Найдите значение Н. Напишите программу, которая вводит все рациональные данные в программу от N до 1. Заполните с помошью рекурсии.
+// Ответ: N = 5 -> "5, 4, 3, 2, 1"
+// Ответ: N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1" 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите значение N: ");
+        int n = int.Parse(Console.ReadLine()!);
+        PrintNumbers(n);
+    }
+
+    static void PrintNumbers(int n)
+    {
+        if (n == 0)
+            return;
+
+        Console.Write(n + ", ");
+        PrintNumbers(n - 1);
+    }
+}
+
+```
+
+# Task_28
+
+```cs
+ // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+ // M = 1; N = 15 -> 120
+ // M = 4; N = 8. -> 30
+
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine()!);
+
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine()!);
+
+SumFromMToN(m, n);
+
+// вызов функции "сумма чисел от M до N"
+void SumFromMToN(int m, int n)
+{
+    Console.Write(Sum(m - 1, n));
+}
+
+// функция сумма чисел от M до N
+int Sum(int m, int n)
+{
+    int res = m;
+    if (m == n)
+        return 0;
+    else
+    {
+
+        m++;
+        res = m + Sum(m, n);
+        Console.WriteLine($"Сумма натуральных чисел из {m} до {n} равна: {res}");
+        return res;
+        
+    }
+    
+}
+
+```
+
+# Task_29
+
+```cs
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
+
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Введите число m: ");
+        int m = Convert.ToInt32(Console.ReadLine()!);
+
+        Console.Write("Введите число n: ");
+        int n = Convert.ToInt32(Console.ReadLine()!);
+        
+        int result = Ackermann(m, n);
+        
+        Console.WriteLine($"A({m}, {n}) = {result}");
+    }
+    
+    public static int Ackermann(int m, int n)
+    {
+        if (m == 0)
+        {
+            return n + 1;
+        }
+        else if (n == 0)
+        {
+            return Ackermann(m - 1, 1);
+        }
+        else
+        {
+            return Ackermann(m - 1, Ackermann(m, n - 1));
+        }
+    }
+}
+
+```
