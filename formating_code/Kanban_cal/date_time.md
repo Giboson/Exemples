@@ -11,11 +11,10 @@
 
 Datе[19.09.23]
 
-> [!NOTE]
-Datе[20.09.23]
-
 - [x] создать папку с html js css python java-srvlet go ->  прогресию кода документировать в папке docs
 
+> [!NOTE]
+Datе[20.09.23]
 > [!IMPORTANT]
 Установить java и среду IDEA  jar -v 11 домашне задания TCP/IP,HTTP для  написание сервера.
 [IntelliJ IDEA -> 'Download'](https://www.jetbrains.com/ru-ru/idea/)
