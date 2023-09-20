@@ -17,10 +17,7 @@ Datе[19.09.23]
 Datе[20.09.23] нет заданий рабочий день
 
 
-> [!IMPORTANT]
-Установить java и среду IDEA  jar -v 11 домашне задания TCP/IP,HTTP для  написание сервера.
-[IntelliJ IDEA -> 'Download'](https://www.jetbrains.com/ru-ru/idea/)
-[JavaSDK -> 'Download'](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
+
 
 Datе[21.09.23]
 
@@ -30,6 +27,11 @@ Datе[21.09.23]
 - [ ] Препиесаит математику урок 2 разложение и слияние дробей
 - [ ] Домашне задания Т3 по  миатреце -> Пирамида Минто
 /Minto Pyramid [Презентация](https://gbcdn.mrgcdn.ru/uploads/asset/5512492/attachment/e08a98aeea467090afb0203364b57469.pdf)
+
+> [!IMPORTANT]
+Установить java и среду IDEA  jar -v 11 домашне задания TCP/IP,HTTP для  написание сервера.
+[IntelliJ IDEA -> 'Download'](https://www.jetbrains.com/ru-ru/idea/)
+[JavaSDK -> 'Download'](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
 
 ## Образец для заполнения
 
