@@ -49,7 +49,7 @@ public class Main {
 ## code_java_3
 
 ```java
-// Build Systen: Maven  SERVER -- location >> http://localhost:8088/
+// Build Systen: Maven.  SERVER -- location >> http://localhost:8088/
 package ru.geekbrainse;
 
 import java.io.BufferedReader;
