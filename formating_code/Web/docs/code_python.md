@@ -18,6 +18,7 @@
 ```py
 
 # This is a sample Python script.
+# install Flask console >>  pip install flask     
 from flask import Flask # opbect
 
 
