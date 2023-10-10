@@ -1,6 +1,7 @@
 # code_java_1
 
 ```java
+// Build Systen: IntelliJ 
 import java.util.Arrays;
 import java.util.List;
 import static java.lang.System.out;
@@ -21,4 +22,26 @@ class Welcome {
 }
 
 
+```
+
+## code_java_2
+
+```cs
+// Build Systen: Maven 
+package org.example;
+import static java.lang.System.out;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        System.out.printf(" WELCOME-> CODE! ");
+
+        
+        for (int i = 1; i <= 5; i++) {
+
+            out.println("i = " + i);
+        }
+    }
+}
 ```
