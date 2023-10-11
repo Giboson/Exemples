@@ -19,7 +19,7 @@
 ```md
 
  Status progress. 
- Vidio [link](https://ya.ru)
+ Vidеo [link](https://ya.ru)
 > [!NOTE]
 выполнение не срочное 
 > [!IMPORTANT]
