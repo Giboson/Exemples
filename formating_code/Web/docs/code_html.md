@@ -1,0 +1,30 @@
+# code_html_1
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"> </script>
+    <link href="main.css" rel="stylesheet">
+    <script src="main.js"> </script>
+
+    <title>HTML5</title>
+</head>
+<body>
+    <py-script>
+    
+        print('Hello, world!')
+        name = 15
+        print(name + 5)
+        print([x for x in range(name)])
+
+    </py-script>
+
+
+</body>
+</html>
+
+```
